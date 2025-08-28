@@ -1,18 +1,27 @@
-import Hero from "./sections/Hero.jsx";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./sections/Header.jsx";
-import About from "./sections/About.jsx";
-import AvailableRooms from "./sections/AvailableRooms.jsx";
 import Footer from "./sections/Footer.jsx";
+import Home from './components/pages/Home.jsx';
+import About from './components/pages/About.jsx';
+import Rooms from './components/pages/Rooms.jsx';
+import Contact from './components/pages/Contact.jsx';
+import Facilities from './components/pages/Facilities.jsx';
 
 function App() {
   return (
-    <>
+    <Router>
       <Header />
-      <Hero />
-      <About />
-      <AvailableRooms />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/facilities" element={<Facilities />} />
+        </Routes>
+      </main>
       <Footer />
-    </>
+    </Router>
   );
 }
 

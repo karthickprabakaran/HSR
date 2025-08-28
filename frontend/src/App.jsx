@@ -2,10 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./sections/Header.jsx";
 import Footer from "./sections/Footer.jsx";
 import Home from './components/pages/Home.jsx';
-import About from './components/pages/About.jsx';
-import Rooms from './components/pages/Rooms.jsx';
-import Contact from './components/pages/Contact.jsx';
-import Facilities from './components/pages/Facilities.jsx';
+import Rooms from './components/pages/Rooms.jsx'
+import RoomDetailsPage from './components/pages/RoomDetails.jsx';
 
 function App() {
   return (
@@ -14,10 +12,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/rooms" element={<Rooms />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/facilities" element={<Facilities />} />
+          <Route path="/Rooms" element={<Rooms />} />
+          <Route path="/room/:id" element={<RoomDetailsPage />} />
         </Routes>
       </main>
       <Footer />

@@ -4,6 +4,7 @@ import Footer from "./sections/Footer.jsx";
 import Home from './components/pages/Home.jsx';
 import Rooms from './components/pages/Rooms.jsx'
 import RoomDetailsPage from './components/pages/RoomDetails.jsx';
+import ContactPage from './components/pages/Contact.jsx';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Rooms" element={<Rooms />} />
+          <Route path="/rooms" element={<Rooms />} />
           <Route path="/room/:id" element={<RoomDetailsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
       <Footer />

@@ -80,7 +80,7 @@ const Footer = () => {
               Privacy Policy
             </a>
             <a href="#" className="text-gray-500 hover:text-gray-700 transition text-sm">
-              Cancelation Policy
+              Terms of Service
             </a>
             <a href="#" className="text-gray-500 hover:text-gray-700 transition text-sm">
               Cookie Settings

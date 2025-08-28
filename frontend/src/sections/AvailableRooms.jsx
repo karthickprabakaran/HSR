@@ -30,56 +30,37 @@ const AvailableRooms = () => {
     }
   }, [])
 
+  // Client's actual room data
   const rooms = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop',
-      title: 'The Asia Hotel',
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop',
+      title: 'Junior Suite Pool Villa',
       rating: 9.0,
       bedrooms: 2,
       bathrooms: 2,
       dining: true,
-      price: 10299
+      price: 15000
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop',
-      title: 'Atila Heritage Hotel',
-      rating: 8.8,
-      bedrooms: 1,
-      bathrooms: 1,
-      dining: true,
-      price: 8199
-    },
-    {
-      id: 3,
       image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=300&fit=crop',
-      title: 'Marina Bay Hotel',
-      rating: 9.2,
+      title: 'Presidential Family Suite Pool Villa',
+      rating: 9.5,
       bedrooms: 3,
       bathrooms: 2,
       dining: true,
-      price: 15449
+      price: 25000
     },
     {
-      id: 4,
-      image: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=400&h=300&fit=crop',
-      title: 'Chanakip Star Hotel',
-      rating: 8.6,
-      bedrooms: 2,
-      bathrooms: 1,
-      dining: false,
-      price: 17900
-    },
-    {
-      id: 5,
-      image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=300&fit=crop',
-      title: 'Mountain View Resort',
-      rating: 9.4,
-      bedrooms: 1,
-      bathrooms: 1,
+      id: 3,
+      image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop',
+      title: 'HF Signature Pool Villa',
+      rating: 9.8,
+      bedrooms: 4,
+      bathrooms: 3,
       dining: true,
-      price: 13599
+      price: 30000
     }
   ]
 
@@ -128,6 +109,7 @@ const AvailableRooms = () => {
     <section
       ref={sectionRef}
       className="py-16 md:py-24 lg:py-32 bg-gray-50"
+      id="rooms"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -141,9 +123,29 @@ const AvailableRooms = () => {
           </p>
         </div>
 
+        {/* Room Statistics */}
+        <div className={`grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 ${isVisible ? 'animate-fadeInUp delay-200' : 'opacity-0'}`}>
+          <div className="text-center bg-white p-6 rounded-lg shadow-sm">
+            <div className="text-3xl font-bold text-blue-600 mb-2">5</div>
+            <div className="text-gray-600">Rooms</div>
+          </div>
+          <div className="text-center bg-white p-6 rounded-lg shadow-sm">
+            <div className="text-3xl font-bold text-blue-600 mb-2">1+</div>
+            <div className="text-gray-600">Years Experience</div>
+          </div>
+          <div className="text-center bg-white p-6 rounded-lg shadow-sm">
+            <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
+            <div className="text-gray-600">Happy Guests</div>
+          </div>
+          <div className="text-center bg-white p-6 rounded-lg shadow-sm">
+            <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+            <div className="text-gray-600">Bookings Available</div>
+          </div>
+        </div>
+
         {/* Navigation and Cards Container */}
         <div className="relative">
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Only show if more cards than visible */}
           {rooms.length > cardsToShow && (
             <>
               <button
@@ -186,6 +188,7 @@ const AvailableRooms = () => {
           </button>
         </div>
 
+        {/* Pagination dots - Only show if needed */}
         {rooms.length > cardsToShow && (
           <div className="flex justify-center mt-8 space-x-2">
             {Array.from({ length: Math.ceil(rooms.length / cardsToShow) }).map((_, index) => (

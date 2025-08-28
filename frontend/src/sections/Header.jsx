@@ -46,7 +46,7 @@ const Header = () => {
                 <span className="text-white font-bold text-lg lg:text-xl">HF</span>
               </div>
               <div className="text-white">
-                <p className="text-md tracking-[0.2em] text-white uppercase">Resort</p>
+                <p className="text-md tracking-[0.2em] text-white uppercase">Pool Resorto</p>
               </div>
             </div>
 

@@ -44,9 +44,8 @@ const Footer = () => {
               <div>
                 <h5 className="text-gray-900 font-medium text-sm mb-1">Address</h5>
                 <p className="text-gray-600 text-sm">
-                  123 Mountain View Drive <br />
-                  Montana Resort, MT 59718 <br />
-                  United States
+                  No 32, Shyamala Gardens, Kunal Garden Street,<br />
+                  Akkarai, Chennai, 600119, Tamil Nadu, India
                 </p>
               </div>
             </div>
@@ -55,8 +54,7 @@ const Footer = () => {
               <div>
                 <h5 className="text-gray-900 font-medium text-sm mb-1">Phone</h5>
                 <p className="text-gray-600 text-sm">
-                  +1 (555) 123-4567 <br />
-                  +1 (555) 123-4568
+                  +91 9384842525<br />
                 </p>
               </div>
             </div>
@@ -65,8 +63,7 @@ const Footer = () => {
               <div>
                 <h5 className="text-gray-900 font-medium text-sm mb-1">Email</h5>
                 <p className="text-gray-600 text-sm">
-                  info@montanaresort.com <br />
-                  reservations@montanaresort.com
+                  hfpoolresorto@gmail.com<br />
                 </p>
               </div>
             </div>
@@ -76,7 +73,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-12 pt-8 border-t border-gray-200 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © 2025 HF Resort. All rights reserved.
+            © 2025 HF Pool Resort. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6">
             <a href="#" className="text-gray-500 hover:text-gray-700 transition text-sm">
@@ -92,7 +89,7 @@ const Footer = () => {
         </div>
 
       </div>
-    </footer>
+    </footer >
   )
 }
 

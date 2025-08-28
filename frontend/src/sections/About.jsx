@@ -118,7 +118,7 @@ const About = () => {
             }`}
         >
           {[
-            { number: '50+', label: 'Rooms ' },
+            { number: '5+', label: 'Rooms ' },
             { number: '1+', label: 'Years Experience' },
             { number: '1000+', label: 'Happy Guests' },
             { number: '24/7', label: 'Bookings Available' }

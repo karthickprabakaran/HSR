@@ -1,67 +1,85 @@
-import React, { useState, useEffect } from 'react'
-import { ChevronDown, Menu, X, Facebook, Twitter, Instagram } from 'lucide-react'
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isSticky, setIsSticky] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState(null)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  // Check if we're on the home page
+  const isHomePage = location.pathname === '/';
+
+  const navigation = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Rooms', path: '/rooms' },
+    { name: 'Contact', path: '/contact' },
+    { name: 'Facilities', path: '/facilities' },
+  ];
+
+  const isActive = (path) => location.pathname === path;
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-  // Sticky header functionality
   useEffect(() => {
     const handleScroll = () => {
-      setIsSticky(window.scrollY > 50)
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    // Only add scroll listener on home page
+    if (isHomePage) {
+      window.addEventListener('scroll', handleScroll);
+    } else {
+      setIsScrolled(true); // Always "scrolled" state on other pages
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isHomePage]);
 
-  const navItems = [
-    { name: 'Home', href: '/', active: true },
-    { name: 'About', href: '/about' },
-    { name: 'Rooms', href: '/rooms' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Facilities', href: '/facilities' }
-  ]
+  // Determine header classes based on page and scroll state
+  const getHeaderClasses = () => {
+    if (isHomePage) {
+      return isScrolled
+        ? 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-md shadow-lg py-2'
+        : 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4';
+    } else {
+      return 'fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md shadow-lg py-2';
+    }
+  };
 
   return (
     <>
       {/* Header */}
-      <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isSticky
-          ? 'bg-black/90 backdrop-blur-md shadow-lg py-2'
-          : 'bg-transparent py-4'
-          }`}
-      >
+      <header className={getHeaderClasses()}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
 
             {/* Logo - Top Left */}
-            <div className="flex items-center flex-shrink-0">
+            <Link to="/" className="flex items-center flex-shrink-0">
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 border border-white/20 flex items-center justify-center mr-2 lg:mr-3">
                 <span className="text-white font-bold text-lg lg:text-xl">HF</span>
               </div>
               <div className="text-white">
                 <p className="text-md tracking-[0.2em] text-white uppercase">Pool Resorto</p>
               </div>
-            </div>
+            </Link>
 
             {/* Center Navigation */}
             <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
-              {navItems.map((item, index) => (
-                <div key={index} className="relative group">
-                  <a
-                    href={item.href}
-                    className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${item.active ? 'border-b-2 border-white pb-1' : ''
-                      }`}
-                  >
-                    {item.name}
-                  </a>
-                </div>
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? 'border-b-2 border-white pb-1' : ''
+                    }`}
+                >
+                  {item.name}
+                </Link>
               ))}
             </nav>
 
@@ -91,9 +109,12 @@ const Header = () => {
               </a>
 
               {/* Book Button */}
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md font-medium text-sm tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ml-4">
+              <Link
+                to="/contact"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md font-medium text-sm tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ml-4"
+              >
                 Book A Room
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -137,16 +158,16 @@ const Header = () => {
 
             <nav className="p-6 overflow-y-auto">
               <ul className="space-y-4">
-                {navItems.map((item, index) => (
-                  <li key={index}>
-                    <a
-                      href={item.href}
-                      className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${item.active ? 'text-blue-600 border-l-4 border-blue-600 pl-4' : ''
+                {navigation.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      to={item.path}
+                      className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? 'text-blue-600 border-l-4 border-blue-600 pl-4' : ''
                         }`}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -166,19 +187,20 @@ const Header = () => {
 
               {/* Mobile Book Button */}
               <div className="mt-6">
-                <button
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-medium tracking-wide transition-all duration-300"
+                <Link
+                  to="/contact"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-medium tracking-wide transition-all duration-300 text-center block"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book A Room
-                </button>
+                </Link>
               </div>
             </nav>
           </div>
         </div>
       )}
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

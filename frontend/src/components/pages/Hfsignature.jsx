@@ -56,7 +56,7 @@ const HFSignatureVilla = () => {
       {/* Back Button */}
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link to="/rooms" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
+          <Link to="/" className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Rooms
           </Link>

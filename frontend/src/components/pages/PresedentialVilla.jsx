@@ -40,7 +40,7 @@ const PresedentialVilla = () => {
       'Tissues Box',
       'Snacks with Tray',
       'Chennai Map',
-      'Kettle with like Black Tea Bags, Green Tea Bags',
+      'Kettle with Black Tea Bags, Green Tea Bags',
       'Milk Powder, Sugar Powder',
       'Bath Towel, Hand Towel',
       'Swimming Pool Towel',

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import React, { useState, useEffect, useRef } from 'react'
 import RoomCard from '../components/RoomCard.jsx'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const AvailableRooms = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -31,7 +30,7 @@ const AvailableRooms = () => {
     }
   }, [])
 
-  // Client's actual room data
+  // Client's actual room data (3 rooms only)
   const rooms = [
     {
       id: 1,
@@ -65,46 +64,23 @@ const AvailableRooms = () => {
     }
   ]
 
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [cardsToShow, setCardsToShow] = useState(4)
+  const [cardsToShow, setCardsToShow] = useState(3)
 
-  // Responsive cards per view
+  // Responsive cards per view (max 3 since only 3 rooms)
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setCardsToShow(1)
-      } else if (window.innerWidth < 1024) {
-        setCardsToShow(2)
-      } else if (window.innerWidth < 1280) {
-        setCardsToShow(3)
-      } else {
-        setCardsToShow(4)
-      }
+      let cards = 3
+      if (window.innerWidth < 640) cards = 1
+      else if (window.innerWidth < 1024) cards = 2
+      else cards = 3
+
+      setCardsToShow(Math.min(cards, rooms.length))
     }
 
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev + cardsToShow >= rooms.length ? 0 : prev + 1
-    )
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === 0 ? Math.max(0, rooms.length - cardsToShow) : prev - 1
-    )
-  }
-
-  const visibleRooms = rooms.slice(currentIndex, currentIndex + cardsToShow)
-  if (visibleRooms.length < cardsToShow && currentIndex > 0) {
-    const remaining = cardsToShow - visibleRooms.length
-    const additionalRooms = rooms.slice(0, remaining)
-    visibleRooms.push(...additionalRooms)
-  }
+  }, [rooms.length])
 
   return (
     <section
@@ -144,69 +120,34 @@ const AvailableRooms = () => {
           </div>
         </div>
 
-        {/* Navigation and Cards Container */}
-        <div className="relative">
-          {/* Navigation Arrows - Only show if more cards than visible */}
-          {rooms.length > cardsToShow && (
-            <>
-              <button
-                onClick={prevSlide}
-                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-all duration-300 hover:scale-110"
-                aria-label="Previous rooms"
-              >
-                <ChevronLeft className="w-6 h-6 text-gray-600" />
-              </button>
-
-              <button
-                onClick={nextSlide}
-                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white shadow-lg rounded-full p-3 hover:bg-gray-50 transition-all duration-300 hover:scale-110"
-                aria-label="Next rooms"
-              >
-                <ChevronRight className="w-6 h-6 text-gray-600" />
-              </button>
-            </>
-          )}
-
-          <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
-            {visibleRooms.map((room, index) => (
-              <RoomCard
-                key={`${room.id}-${index}`}
-                image={room.image}
-                title={room.title}
-                rating={room.rating}
-                bedrooms={room.bedrooms}
-                bathrooms={room.bathrooms}
-                dining={room.dining}
-                price={room.price}
-              />
-            ))}
-          </div>
+        {/* Cards */}
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
+          {rooms.slice(0, cardsToShow).map((room) => (
+            <RoomCard
+              key={room.id}
+              image={room.image}
+              title={room.title}
+              rating={room.rating}
+              bedrooms={room.bedrooms}
+              bathrooms={room.bathrooms}
+              dining={room.dining}
+              price={room.price}
+            />
+          ))}
         </div>
 
+        {/* View All Button */}
         <div className={`text-center mt-12 ${isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'}`}>
-          <button className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            <Link to='/rooms'>View All Rooms</Link>
-          </button>
+          <Link
+            to="/rooms"
+            className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
+          >
+            View All Rooms
+          </Link>
         </div>
-
-        {/* Pagination dots - Only show if needed */}
-        {rooms.length > cardsToShow && (
-          <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(rooms.length / cardsToShow) }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index * cardsToShow)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${Math.floor(currentIndex / cardsToShow) === index
-                  ? 'bg-blue-600 w-8'
-                  : 'bg-gray-300 hover:bg-gray-400'
-                  }`}
-                aria-label={`Go to page ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
       </div>
 
+      {/* Animations */}
       <style jsx>{`
         @keyframes fadeInUp {
           from {

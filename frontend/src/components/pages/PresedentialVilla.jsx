@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield, Clock } from 'lucide-react';
+import img1 from '../../assets/images/rightview.jpg'
+
 
 const PresedentialVilla = () => {
   const room = {
     title: 'Presidential Family Suite Pool Villa',
     images: [
-      'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop'
+      img1
     ],
     rating: 9.0,
     bedrooms: 2,

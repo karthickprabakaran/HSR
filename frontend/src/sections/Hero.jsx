@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react'
 
-import entrance from '../assets/EntranceWall.jpg'
-import lawn from '../assets/longentrance.jpg'
-import side from '../assets/sideangle.jpg'
-import seating from '../assets/seating.jpg'
-
+import { Link } from 'react-router-dom';
+import seating from '../assets/images/seating_1.jpg'
+import side from '../assets/images/sideangle_1.jpg'
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
 
-  // Sample slides data - replace with your actual images/videos
   const slides = [
     {
-      type: 'image',
-      src: entrance,
+      type: 'video',
+      src: "/videos/27.mp4",
       alt: 'Resort Pool View',
-      title: 'HF Resort',
+      title: '',
       subtitle: 'Unlock to enjoy the view of Martine'
     },
     {
@@ -35,20 +32,43 @@ const Hero = () => {
       subtitle: 'Where nature meets luxury'
     },
     {
-      type: 'image',
-      src: lawn,
-      poster: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop',
+      type: 'video',
+      src: "/videos/32.mp4",
       alt: 'Resort Video',
       title: 'Experience Paradise',
       subtitle: 'Immerse yourself in luxury'
+    },
+    {
+      type: 'video',
+      src: "/videos/30.mp4",
+      alt: 'Resort Pool View',
+      title: 'Experience Luxury',
+      subtitle: 'Unlock the beauty of serene poolside living'
+    },
+    {
+      type: 'video',
+      src: "/videos/1.mp4",
+      alt: 'Beachfront Villa',
+      title: 'Paradise Awaits',
+      subtitle: 'Wake up to the sound of waves and golden horizons'
+    },
+    {
+      type: 'video',
+      src: "/videos/23.mp4",
+      alt: 'Modern Resort Interior',
+      title: 'Comfort Redefined',
+      subtitle: 'Where elegance meets modern design and warmth'
     }
+
+
   ]
 
   useEffect(() => {
     if (isPlaying) {
       const interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length)
-      }, 5000) // Change slide every 5 seconds
+      }, 5000)
+
 
       return () => clearInterval(interval)
     }
@@ -119,9 +139,10 @@ const Hero = () => {
             <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
               Book Now
             </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 backdrop-blur-sm">
+            <Link to={'/rooms'}>  <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 backdrop-blur-sm">
               Explore Rooms
             </button>
+            </Link>
           </div>
         </div>
       </div>
@@ -167,7 +188,7 @@ const Hero = () => {
         ))}
       </div>
 
-    </div>
+    </div >
   )
 }
 

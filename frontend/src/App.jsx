@@ -6,7 +6,7 @@ import ContactPage from './components/pages/Contact.jsx';
 import JuniorPoolVilla from './components/pages/JuniorVilla.jsx';
 import Hfsignature from './components/pages/Hfsignature.jsx';
 import PresedentialVilla from './components/pages/PresedentialVilla.jsx';
-
+import Facilities from './components/pages/Facilities.jsx';
 
 
 
@@ -21,6 +21,7 @@ function App() {
           <Route path="/juniorvilla" element={<JuniorPoolVilla />} />
           <Route path="/presidential" element={< PresedentialVilla />} />
           <Route path="/hfsignature" element={<Hfsignature />} />
+          <Route path="/facilities" element={<Facilities />} />
         </Routes>
       </main>
       <Footer />

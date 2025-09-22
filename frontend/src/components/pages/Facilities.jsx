@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Amenities from "../../sections/Ammeneties";
 
+
 const Facilities = () => {
   const amenities = [
     "Dental Kit (Brush and Paste)",
@@ -38,22 +39,37 @@ const Facilities = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 text-white py-24 px-6 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4">Facilities</h1>
-        <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-90">
-          Revive and feel heavenly from head to toe. Experience natural luxury
-          with curated amenities at HF Pool Resort.
-        </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Link
-            to="/book"
-            className="bg-white text-blue-700 px-6 py-3 rounded-md font-semibold shadow hover:bg-gray-100 transition"
-          >
-            Book Now
-          </Link>
-          <Link
-            to="/rooms"
-            className="border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-blue-700 transition" > Explore Rooms </Link>
+      <section className="relative text-white h-[700px] md:h-[800px] px-6 text-center overflow-hidden">
+        {/* Video background */}
+        <video
+          src="/videos/33.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover"
+        />
+        {/* Content */}
+        <div className="relative z-10 max-w-3xl mx-auto flex flex-col justify-center h-full">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">Facilities</h1>
+          <p className="text-lg md:text-xl max-w-2xl mx-auto opacity-70 mb-8">
+            Revive and feel heavenly from head to toe. Experience natural luxury
+            with curated amenities at HF Pool Resort.
+          </p>
+          <div className="flex justify-center gap-4">
+            <Link
+              to="/contact"
+              className="bg-white text-blue-700 px-6 py-3 rounded-md font-semibold shadow hover:bg-gray-100 transition"
+            >
+              Book Now
+            </Link>
+            <Link
+              to="/"
+              className="border-2 border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-white hover:text-blue-700 transition"
+            >
+              Explore Rooms
+            </Link>
+          </div>
         </div>
       </section>
 

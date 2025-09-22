@@ -1,6 +1,7 @@
 import Hero from "../../sections/Hero";
 import About from "../../sections/About";
 import AvailableRooms from "../../sections/AvailableRooms";
+import MediaGallery from "../../sections/Gallery";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Hero />
       <About />
       <AvailableRooms />
+      <MediaGallery />
     </>
   )
 }

@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react'
 
+import entrance from '../assets/EntranceWall.jpg'
+import bath from '../assets/bath.jpg'
+import side from '../assets/sideangle.jpg'
+import seating from '../assets/seating.jpg'
+
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
@@ -9,28 +15,28 @@ const Hero = () => {
   const slides = [
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=1920&h=1080&fit=crop',
+      src: entrance,
       alt: 'Resort Pool View',
       title: 'HF Resort',
       subtitle: 'Unlock to enjoy the view of Martine'
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1920&h=1080&fit=crop',
+      src: bath,
       alt: 'Beach Resort',
       title: 'Luxury Experience',
       subtitle: 'Discover paradise in every moment'
     },
     {
       type: 'image',
-      src: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1920&h=1080&fit=crop',
+      src: side,
       alt: 'Mountain View',
       title: 'Breathtaking Views',
       subtitle: 'Where nature meets luxury'
     },
     {
       type: 'video',
-      src: 'https://videos.pexels.com/video-files/3571264/3571264-uhd_2560_1440_25fps.mp4',
+      src: seating,
       poster: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop',
       alt: 'Resort Video',
       title: 'Experience Paradise',

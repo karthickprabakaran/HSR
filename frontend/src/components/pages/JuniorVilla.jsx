@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield } from 'lucide-react';
 
+
+
 const JuniorSuiteVilla = () => {
   const room = {
     title: 'Junior Suite Pool Villa',

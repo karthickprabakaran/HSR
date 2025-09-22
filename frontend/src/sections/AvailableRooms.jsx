@@ -40,7 +40,8 @@ const AvailableRooms = () => {
       bedrooms: 2,
       bathrooms: 2,
       dining: true,
-      price: 15000
+      price: 15000,
+      link: '/juniorvilla'
     },
     {
       id: 2,
@@ -50,7 +51,9 @@ const AvailableRooms = () => {
       bedrooms: 3,
       bathrooms: 2,
       dining: true,
-      price: 25000
+      price: 25000,
+      link: '/presidential'
+
     },
     {
       id: 3,
@@ -60,7 +63,9 @@ const AvailableRooms = () => {
       bedrooms: 4,
       bathrooms: 3,
       dining: true,
-      price: 30000
+      price: 30000,
+      link: '/hfsignature'
+
     }
   ]
 
@@ -123,21 +128,23 @@ const AvailableRooms = () => {
         {/* Cards */}
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
           {rooms.slice(0, cardsToShow).map((room) => (
-            <RoomCard
-              key={room.id}
-              image={room.image}
-              title={room.title}
-              rating={room.rating}
-              bedrooms={room.bedrooms}
-              bathrooms={room.bathrooms}
-              dining={room.dining}
-              price={room.price}
-            />
+            <Link to={room.link} >
+              <RoomCard
+                key={room.id}
+                image={room.image}
+                title={room.title}
+                rating={room.rating}
+                bedrooms={room.bedrooms}
+                bathrooms={room.bathrooms}
+                dining={room.dining}
+                price={room.price}
+              />
+            </Link>
           ))}
         </div>
 
         {/* View All Button */}
-        <div className={`text-center mt-12 ${isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'}`}>
+        < div className={`text-center mt-12 ${isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'}`}>
           <Link
             to="/rooms"
             className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"

@@ -69,7 +69,7 @@ const About = () => {
                   }`}
               >
                 <video
-                  src="https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_30fps.mp4"
+                  src="/videos/18.mp4"
                   className="w-full h-64 md:h-80 object-cover"
                   autoPlay
                   loop
@@ -86,7 +86,7 @@ const About = () => {
                   }`}
               >
                 <video
-                  src="https://videos.pexels.com/video-files/4091670/4091670-hd_1920_1080_29fps.mp4"
+                  src="/videos/28.mp4"
                   className="w-full h-30 md:h-38 object-cover"
                   autoPlay
                   loop
@@ -100,7 +100,7 @@ const About = () => {
                   }`}
               >
                 <video
-                  src="https://videos.pexels.com/video-files/7578552/7578552-uhd_2560_1440_30fps.mp4"
+                  src="/videos/22.mp4"
                   className="w-full h-42 md:h-38 object-cover"
                   autoPlay
                   loop

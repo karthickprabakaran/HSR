@@ -143,15 +143,6 @@ const AvailableRooms = () => {
           ))}
         </div>
 
-        {/* View All Button */}
-        < div className={`text-center mt-12 ${isVisible ? 'animate-fadeInUp delay-600' : 'opacity-0'}`}>
-          <Link
-            to="/rooms"
-            className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
-          >
-            View All Rooms
-          </Link>
-        </div>
       </div>
 
       {/* Animations */}

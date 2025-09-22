@@ -2,8 +2,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./sections/Header.jsx";
 import Footer from "./sections/Footer.jsx";
 import Home from './components/pages/Home.jsx';
-import Rooms from './components/pages/Rooms.jsx'
-import RoomDetailsPage from './components/pages/RoomDetails.jsx';
 import ContactPage from './components/pages/Contact.jsx';
 import JuniorPoolVilla from './components/pages/JuniorVilla.jsx';
 import Hfsignature from './components/pages/Hfsignature.jsx';
@@ -19,7 +17,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/rooms" element={<Rooms />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/juniorvilla" element={<JuniorPoolVilla />} />
           <Route path="/presidential" element={< PresedentialVilla />} />

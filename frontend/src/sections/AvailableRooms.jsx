@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom'
 import React, { useState, useEffect, useRef } from 'react'
 import RoomCard from '../components/RoomCard.jsx'
 
+import img1 from '../assets/images/rightview.jpg'
+import img2 from '../assets/images/sideangle_1.jpg'
+import img3 from '../assets/images/straightangle_1.jpg'
+
+
+
 const AvailableRooms = () => {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
@@ -34,7 +40,7 @@ const AvailableRooms = () => {
   const rooms = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=400&h=300&fit=crop',
+      image: img2,
       title: 'Junior Suite Pool Villa',
       rating: 9.0,
       bedrooms: 2,
@@ -45,7 +51,7 @@ const AvailableRooms = () => {
     },
     {
       id: 2,
-      image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=400&h=300&fit=crop',
+      image: img1,
       title: 'Presidential Family Suite Pool Villa',
       rating: 9.5,
       bedrooms: 3,
@@ -57,7 +63,7 @@ const AvailableRooms = () => {
     },
     {
       id: 3,
-      image: 'https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=400&h=300&fit=crop',
+      image: img3,
       title: 'HF Signature Pool Villa',
       rating: 9.8,
       bedrooms: 4,

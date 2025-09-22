@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Play, Pause } from 'lucide-react'
 
 import entrance from '../assets/EntranceWall.jpg'
-import bath from '../assets/bath.jpg'
+import lawn from '../assets/longentrance.jpg'
 import side from '../assets/sideangle.jpg'
 import seating from '../assets/seating.jpg'
 
@@ -22,7 +22,7 @@ const Hero = () => {
     },
     {
       type: 'image',
-      src: bath,
+      src: seating,
       alt: 'Beach Resort',
       title: 'Luxury Experience',
       subtitle: 'Discover paradise in every moment'
@@ -35,8 +35,8 @@ const Hero = () => {
       subtitle: 'Where nature meets luxury'
     },
     {
-      type: 'video',
-      src: seating,
+      type: 'image',
+      src: lawn,
       poster: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1920&h=1080&fit=crop',
       alt: 'Resort Video',
       title: 'Experience Paradise',
@@ -44,7 +44,6 @@ const Hero = () => {
     }
   ]
 
-  // Auto-play functionality
   useEffect(() => {
     if (isPlaying) {
       const interval = setInterval(() => {

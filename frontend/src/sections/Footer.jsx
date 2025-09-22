@@ -18,7 +18,7 @@ const Footer = () => {
               <h3 className="text-xl font-bold text-gray-900">Pool Resorto</h3>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-md">
-              HF Resort empowers guests to transform raw relaxation into clear,
+              HF Pool Resort empowers guests to transform raw relaxation into clear,
               compelling experiences — making luxury easier to share, understand, and enjoy.
             </p>
             <div className="flex space-x-4">

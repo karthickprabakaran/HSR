@@ -1,24 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield, Clock } from 'lucide-react';
+import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield } from 'lucide-react';
 
-const PresedentialVilla = () => {
+const HFSignatureVilla = () => {
   const room = {
-    title: 'Presidential Family Suite Pool Villa',
+    title: 'HF Signature Pool Villa',
     images: [
       'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&h=600&fit=crop',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop'
     ],
     rating: 9.0,
-    bedrooms: 2,
-    bathrooms: 2,
+    bedrooms: 1,
+    bathrooms: 1,
     dining: true,
-    weekdayPrice: 25000,
-    weekendPrice: 30000,
+    weekdayPrice: 30000,
+    weekendPrice: 35000,
     size: 2500,
-    maxGuests: 4,
-    description: 'Presidential Family Suite Pool Villa: 2 Rooms (2500Sq Ft) WD Rs 25000+18%, WE Rs 30000+18%',
+    maxGuests: 2,
+    description: 'HF Signature Pool Villa: 1 Room (2500 Sq Ft) WD Rs 30000+18%, WE Rs 35000+18%',
     amenities: [
       'Dental Kit (Brush and Paste)',
       'Shaving Kit (Razor and Cream)',
@@ -30,8 +30,8 @@ const PresedentialVilla = () => {
       'Loofah',
       'Bubble Bath for Bathtub - 25 Ml',
       'Bathroom Slippers',
-      '2 One Litre Brand Water Bottle',
-      'Show Shiner',
+      '1 One Litre Brand Water Bottle',
+      'Shoe Shiner',
       'Sanitizer Wipes',
       'Sewing Kit',
       'Medi Kit',
@@ -40,9 +40,9 @@ const PresedentialVilla = () => {
       'Tissues Box',
       'Snacks with Tray',
       'Chennai Map',
-      'Kettle with like Black Tea Bags, Green Tea Bags',
+      'Kettle with Black Tea Bags, Green Tea Bags',
       'Milk Powder, Sugar Powder',
-      'Bath Towel, Hand Towel',
+      'Bath Towel & Hand Towel',
       'Swimming Pool Towel',
       'Iron Box and Board',
       'Toilet roll',
@@ -93,10 +93,10 @@ const PresedentialVilla = () => {
             {/* Room Specs */}
             <div className="grid grid-cols-2 gap-6">
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Bed className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">{room.bedrooms} Bedrooms</span>
+                <Bed className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">{room.bedrooms} Bedroom</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Bath className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">{room.bathrooms} Bathrooms</span>
+                <Bath className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">{room.bathrooms} Bathroom</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
                 <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Up to {room.maxGuests} Guests</span>
@@ -171,4 +171,4 @@ const PresedentialVilla = () => {
   );
 };
 
-export default PresedentialVilla;
+export default HFSignatureVilla;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, User, Send } from 'lucide-react';
+import MediaGalleryMini from '../../sections/MinimalGallery';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -321,6 +322,7 @@ const ContactPage = () => {
             <p className="text-gray-600 text-sm">Our team ensures every detail of your stay is perfect</p>
           </div>
         </div>
+        <MediaGalleryMini />
       </div>
     </div>
   );

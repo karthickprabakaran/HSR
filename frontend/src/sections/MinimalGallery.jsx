@@ -26,7 +26,7 @@ const MediaGalleryMini = () => {
   const paginationRef = useRef(null);
 
   return (
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-gray-50">
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={16}
@@ -72,7 +72,6 @@ const MediaGalleryMini = () => {
         ))}
       </Swiper>
 
-      {/* External Pagination */}
       <div ref={paginationRef} className="mt-4 flex justify-center"></div>
     </section>
   );

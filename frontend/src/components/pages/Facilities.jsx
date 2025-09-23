@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Amenities from "../../sections/Ammeneties";
+import MediaGalleryMini from "../../sections/MinimalGallery";
 
 
 const Facilities = () => {
@@ -94,6 +95,8 @@ const Facilities = () => {
       {/* Amenities */}
 
       <Amenities />
+
+      <MediaGalleryMini />
 
     </div>
   );

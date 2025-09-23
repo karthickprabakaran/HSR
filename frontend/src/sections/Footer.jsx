@@ -13,9 +13,9 @@ const Footer = () => {
           <div>
             <div className="flex items-center mb-4">
               <div className="w-10 h-10 bg-gray-900 flex items-center justify-center mr-3 rounded-md">
-                <span className="text-white font-bold text-lg">HF</span>
+                <span className="text-white font-bold text-[24px]">HF</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900">Pool Resorto</h3>
+              <h3 className="text-[24px] font-bold text-gray-900">Pool Resorto</h3>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed mb-6 max-w-md">
               HF Pool Resort empowers guests to transform raw relaxation into clear,

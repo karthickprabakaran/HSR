@@ -6,8 +6,6 @@ import img1 from '../assets/images/rightview.jpg'
 import img2 from '../assets/images/sideangle_1.jpg'
 import img3 from '../assets/images/straightangle_1.jpg'
 
-
-
 const AvailableRooms = () => {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
@@ -59,7 +57,6 @@ const AvailableRooms = () => {
       dining: true,
       price: 25000,
       link: '/presidential'
-
     },
     {
       id: 3,
@@ -71,7 +68,6 @@ const AvailableRooms = () => {
       dining: true,
       price: 30000,
       link: '/hfsignature'
-
     }
   ]
 
@@ -111,28 +107,47 @@ const AvailableRooms = () => {
           </p>
         </div>
 
-
         {/* Cards */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
-          {rooms.slice(0, cardsToShow).map((room) => (
-            <Link to={room.link} >
-              <RoomCard
-                key={room.id}
-                image={room.image}
-                title={room.title}
-                rating={room.rating}
-                bedrooms={room.bedrooms}
-                bathrooms={room.bathrooms}
-                dining={room.dining}
-                price={room.price}
-              />
-            </Link>
-          ))}
+        <div className={`${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
+
+          {/* Mobile Slider */}
+          <div className="sm:hidden flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 hide-scrollbar">
+            {rooms.map((room) => (
+              <Link to={room.link} key={room.id} className="snap-center shrink-0 w-80">
+                <RoomCard
+                  image={room.image}
+                  title={room.title}
+                  rating={room.rating}
+                  bedrooms={room.bedrooms}
+                  bathrooms={room.bathrooms}
+                  dining={room.dining}
+                  price={room.price}
+                />
+              </Link>
+            ))}
+          </div>
+
+          {/* Tablet & Desktop Grid */}
+          <div className="hidden sm:grid grid-cols-2 lg:grid-cols-3 gap-6">
+            {rooms.slice(0, cardsToShow).map((room) => (
+              <Link to={room.link} key={room.id}>
+                <RoomCard
+                  image={room.image}
+                  title={room.title}
+                  rating={room.rating}
+                  bedrooms={room.bedrooms}
+                  bathrooms={room.bathrooms}
+                  dining={room.dining}
+                  price={room.price}
+                />
+              </Link>
+            ))}
+          </div>
         </div>
 
       </div>
 
-      {/* Animations */}
+      {/* Animations & scrollbar style */}
       <style jsx>{`
         @keyframes fadeInUp {
           from {
@@ -170,6 +185,15 @@ const AvailableRooms = () => {
         .delay-400 { animation-delay: 0.4s; }
         .delay-500 { animation-delay: 0.5s; }
         .delay-600 { animation-delay: 0.6s; }
+
+        /* Hide scrollbar for slider */
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
       `}</style>
     </section>
   )

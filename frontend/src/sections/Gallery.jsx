@@ -43,7 +43,7 @@ const MediaGallerySlider = () => {
     <section className="py-24 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-          Media Gallery
+          HF's  Gallery
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Explore our resort through images and videos for an immersive experience.

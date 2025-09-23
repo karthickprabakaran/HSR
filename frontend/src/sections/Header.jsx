@@ -60,10 +60,10 @@ const Header = () => {
             {/* Logo - Top Left */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 border border-white/20 flex items-center justify-center mr-2 lg:mr-3">
-                <span className="text-white font-bold text-lg lg:text-xl">HF</span>
+                <span className="text-white font-bold text-xl lg:text-xl">HF</span>
               </div>
               <div className="text-white">
-                <p className="text-md tracking-[0.2em] text-white uppercase">Pool Resorto</p>
+                <p className="text-lg tracking-[0.2em] font-bold text-white uppercase">Pool Resorto</p>
               </div>
             </Link>
 

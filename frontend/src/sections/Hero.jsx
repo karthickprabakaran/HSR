@@ -90,6 +90,15 @@ const Hero = () => {
     setIsPlaying(!isPlaying)
   }
 
+
+  function handleExploreRoooms() {
+    const section = document.getElementById("rooms");
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Slider Container */}
@@ -136,13 +145,14 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-              Book Now
-            </button>
-            <Link to={'/rooms'}>  <button className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 backdrop-blur-sm">
+            <Link to='/contact'>
+              <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                Book Now
+              </button>
+            </Link>
+            <button onClick={handleExploreRoooms} className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-md font-medium text-lg tracking-wide transition-all duration-300 backdrop-blur-sm">
               Explore Rooms
             </button>
-            </Link>
           </div>
         </div>
       </div>

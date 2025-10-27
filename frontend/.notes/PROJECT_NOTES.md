@@ -104,19 +104,15 @@ Include:
 
 ### EP Plan (Room Only)
 
-| Room Type                                    | Sq Ft | Weekday (Sun–Fri) | Weekend (Sat) |
-| -------------------------------------------- | ----- | ----------------- | ------------- |
-| Junior Suite Private Pool Villa              | 1200  | ₹17,500 +18%      | ₹22,500 +18%  |
-| Presidential Family Suite Private Pool Villa | 2000  | ₹30,000 +18%      | ₹35,000 +18%  |
-| HF Signature Family Private Pool Villa       | 2000  | ₹35,000 +18%      | ₹40,000 +18%  |
+| Room Type                              | Sq Ft | Weekday (Sun–Fri) | Weekend (Sat) |
+| -------------------------------------- | ----- | ----------------- | ------------- |
+| HF Signature Family Private Pool Villa | 2000  | ₹35,000 +18%      | ₹40,000 +18%  |
 
 ### CP Plan (Room + Breakfast)
 
-| Room Type                                    | Sq Ft | Weekday (Sun–Fri) | Weekend (Sat) |
-| -------------------------------------------- | ----- | ----------------- | ------------- |
-| Junior Suite Private Pool Villa              | 1200  | ₹18,000 +18%      | ₹23,000 +18%  |
-| Presidential Family Suite Private Pool Villa | 2000  | ₹31,000 +18%      | ₹36,000 +18%  |
-| HF Signature Family Private Pool Villa       | 2000  | ₹36,000 +18%      | ₹41,000 +18%  |
+| Room Type                              | Sq Ft | Weekday (Sun–Fri) | Weekend (Sat) |
+| -------------------------------------- | ----- | ----------------- | ------------- |
+| HF Signature Family Private Pool Villa | 2000  | ₹36,000 +18%      | ₹41,000 +18%  |
 
 ---
 
@@ -165,18 +161,6 @@ Include:
 ---
 
 ## 🏠 Room Descriptions
-
-### Junior Suite Private Pool Villa
-
-- Approx. 1200 Sq Ft
-- Ideal for couples, families, or business travelers
-- Features: Living area, kitchenette, mini fridge, smart TV, king bedroom, private pool with bar counter, luxury bathroom, Wi-Fi, intercom, work desk.
-
-### Presidential Family Suite Private Pool Villa
-
-- Approx. 2000 Sq Ft
-- Two king bedrooms, luxury dining, two bathtubs, backyard patio, and private pool.
-- Designed for families, groups, or gatherings.
 
 ### HF Signature Family Private Pool Villa
 

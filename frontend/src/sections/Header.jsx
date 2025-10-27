@@ -10,11 +10,25 @@ const Header = () => {
   // Check if we're on the home page
   const isHomePage = location.pathname === '/';
 
+  // NEW NAVIGATION STRUCTURE
   const navigation = [
     { name: 'Home', path: '/' },
-    { name: 'Facilities', path: '/facilities' },
+    {
+      name: 'Suites',
+      dropdown: true,
+      children: [
+        { name: 'Junior Suite Private Pool Villa', path: '/junior-villa' },
+        { name: 'Presidential Family Suite Private Pool Villa', path: '/presedential-villa' },
+        { name: 'HF Signature Family Private Pool Villa', path: '/hfsignature' }
+      ]
+    },
+    { name: 'Special Offers', path: '/special-offers' },
+    { name: 'Lawn and Events', path: '/lawn-events' },
+    { name: 'Attractions', path: '/attractions' },
     { name: 'Contact', path: '/contact' }
   ];
+
+  const [isSuitesOpen, setIsSuitesOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
 
@@ -69,16 +83,44 @@ const Header = () => {
 
             {/* Center Navigation */}
             <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? 'border-b-2 border-white pb-1' : ''
-                    }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
+              {navigation.map((item) =>
+                item.dropdown ? (
+                  // Suites Dropdown (Desktop)
+                  <div key="Suites" className="relative group">
+                    <button
+                      className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? 'border-b-2 border-white pb-1' : ''}`}
+                      onMouseEnter={() => setIsSuitesOpen(true)}
+                      onMouseLeave={() => setIsSuitesOpen(false)}
+                    >
+                      Suites <svg className="ml-2 w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </button>
+                    <div
+                      className={`absolute left-0 top-full mt-2 w-64 bg-white rounded shadow-lg py-2 z-40 ${isSuitesOpen ? 'block' : 'hidden'} group-hover:block`}
+                      onMouseEnter={() => setIsSuitesOpen(true)}
+                      onMouseLeave={() => setIsSuitesOpen(false)}
+                    >
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.name}
+                          to={child.path}
+                          className={`block px-6 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? 'font-bold text-blue-600 bg-gray-100' : ''}`}
+                          onClick={() => setIsSuitesOpen(false)}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? 'border-b-2 border-white pb-1' : ''}`}
+                  >
+                    {item.name}
+                  </Link>
+                )
+              )}
             </nav>
 
             {/* Right Section - Social Icons & Book Button */}
@@ -156,18 +198,41 @@ const Header = () => {
 
             <nav className="p-6 overflow-y-auto">
               <ul className="space-y-4">
-                {navigation.map((item) => (
-                  <li key={item.name}>
-                    <Link
-                      to={item.path}
-                      className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? 'text-blue-600 border-l-4 border-blue-600 pl-4' : ''
-                        }`}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
+                {navigation.map((item) =>
+                  item.dropdown ? (
+                    // Suites Dropdown (Mobile)
+                    <li key="Suites">
+                      <details className="group" open={item.children.some(child => isActive(child.path))}>
+                        <summary className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block cursor-pointer flex justify-between items-center">
+                          Suites <span className="ml-2 text-xs">▼</span>
+                        </summary>
+                        <ul className="ml-4 mt-2 border-l pl-4">
+                          {item.children.map((child) => (
+                            <li key={child.name}>
+                              <Link
+                                to={child.path}
+                                className={`block py-2 text-gray-700 hover:text-blue-600 font-medium text-sm ${isActive(child.path) ? 'text-blue-600 font-bold' : ''}`}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                              >
+                                {child.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    </li>
+                  ) : (
+                    <li key={item.name}>
+                      <Link
+                        to={item.path}
+                        className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? 'text-blue-600 border-l-4 border-blue-600 pl-4' : ''}`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
 
               {/* Mobile Social Links */}

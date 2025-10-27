@@ -6,7 +6,6 @@ const PresedentialVilla = () => {
   const room = {
     title: 'Presidential Family Suite Pool Villa',
     images: [
-      img1
     ],
     rating: 9.0,
     bedrooms: 2,

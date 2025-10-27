@@ -5,19 +5,17 @@ import img1 from '../../assets/images/straightangle_1.jpg'
 
 const HFSignatureVilla = () => {
   const room = {
-    title: 'HF Signature Pool Villa',
+    title: 'HF Signature Family Private Pool Villa',
     images: [
       img1
     ],
     rating: 9.0,
-    bedrooms: 1,
-    bathrooms: 1,
+    bedrooms: 2,
+    bathrooms: 2,
     dining: true,
-    weekdayPrice: 30000,
-    weekendPrice: 35000,
-    size: 2500,
-    maxGuests: 2,
-    description: 'HF Signature Pool Villa: 1 Room (2500 Sq Ft) WD Rs 30000+18%, WE Rs 35000+18%',
+    size: 2000,
+    maxGuests: 4,
+    description: 'Approx. 2000 Sq Ft. Two master bedrooms, large living and dining area, star-light swimming pool, outdoor shower, premium interiors, and full amenities.',
     amenities: [
       'Dental Kit (Brush and Paste)',
       'Shaving Kit (Razor and Cream)',
@@ -92,39 +90,112 @@ const HFSignatureVilla = () => {
             {/* Room Specs */}
             <div className="grid grid-cols-2 gap-6">
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Bed className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">{room.bedrooms} Bedroom</span>
+                <Bed className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">2 Master Bedrooms</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Bath className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">{room.bathrooms} Bathroom</span>
+                <Bath className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">2 Bathrooms, Outdoor Shower</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Up to {room.maxGuests} Guests</span>
+                <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Spacious Living & Dining</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Dining Available</span>
+                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Starlight Pool, Premium Interiors</span>
               </div>
             </div>
             <div className="text-sm text-gray-600 mt-3"><span className="font-medium">Size:</span> {room.size.toLocaleString()} sq ft</div>
+            <div className="text-sm text-gray-600"><span className="font-medium">Other Features:</span> Outdoor shower, full amenities.</div>
 
-            {/* Pricing */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                { label: 'Weekday (Sun-Fri)', price: room.weekdayPrice },
-                { label: 'Weekend (Saturday)', price: room.weekendPrice }
-              ].map((item, idx) => (
-                <div key={idx} className="bg-gradient-to-r from-blue-50 to-white p-6 rounded-2xl border border-gray-200 shadow-md flex flex-col justify-between">
-                  <h3 className="text-lg font-semibold mb-2">{item.label}</h3>
-                  <div className="text-2xl font-bold mb-1">₹{item.price.toLocaleString()}</div>
-                  <p className="text-sm text-gray-500">+18% GST</p>
-                </div>
-              ))}
-
-              {/* Single Book Now Button */}
-              <div className="md:col-span-2 mt-4">
-                <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
-                  Book Now
-                </button>
+            {/* Check-in / Check-out */}
+            <div className="mt-6">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1 flex items-center">🕒 Check-in / Check-out</h3>
+              <div className="flex space-x-6 text-base text-gray-800 font-medium">
+                <span>Check-in: <span className="font-bold">1:00 PM</span></span>
+                <span>Check-out: <span className="font-bold">11:00 AM</span></span>
               </div>
+            </div>
+
+            {/* CP Plan Pricing Table */}
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-blue-700 mb-2">CP Plan (Room + Breakfast)</h3>
+              <div className="text-sm text-gray-500 mb-2">(Weekday = Sun–Fri, Weekend = Only Saturday)</div>
+              <table className="min-w-full border border-gray-300 text-base mb-6">
+                <thead>
+                  <tr className="bg-gray-100 text-gray-600">
+                    <th className="p-2 border">Room Type</th>
+                    <th className="p-2 border">Sq Ft</th>
+                    <th className="p-2 border">Weekday (Sun–Fri)</th>
+                    <th className="p-2 border">Weekend (Sat)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="text-center">
+                    <td className="p-2 border">HF Signature Family Private Pool Villa</td>
+                    <td className="p-2 border">2000</td>
+                    <td className="p-2 border">₹36,000 +18%</td>
+                    <td className="p-2 border">₹41,000 +18%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* EP Plan Pricing Table */}
+            <div className="mt-3">
+              <h3 className="text-lg font-bold text-blue-700 mb-2">EP Plan (Room Only)</h3>
+              <div className="text-sm text-gray-500 mb-2">(Weekday = Sun–Fri, Weekend = Only Saturday)</div>
+              <table className="min-w-full border border-gray-300 text-base mb-6">
+                <thead>
+                  <tr className="bg-gray-100 text-gray-600">
+                    <th className="p-2 border">Room Type</th>
+                    <th className="p-2 border">Sq Ft</th>
+                    <th className="p-2 border">Weekday (Sun–Fri)</th>
+                    <th className="p-2 border">Weekend (Sat)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="text-center">
+                    <td className="p-2 border">HF Signature Family Private Pool Villa</td>
+                    <td className="p-2 border">2000</td>
+                    <td className="p-2 border">₹35,000 +18%</td>
+                    <td className="p-2 border">₹40,000 +18%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Extra Guest Policy Table */}
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-blue-700 mb-2 flex items-center">👨‍👩‍👧‍👦 Extra Guest Policy</h3>
+              <table className="min-w-full border border-gray-300 text-base">
+                <thead>
+                  <tr className="bg-gray-100 text-gray-600">
+                    <th className="p-2 border">Type</th>
+                    <th className="p-2 border">EP Plan</th>
+                    <th className="p-2 border">CP Plan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td className="p-2 border">Extra Adult</td><td className="p-2 border">₹2500</td><td className="p-2 border">₹2800</td></tr>
+                  <tr><td className="p-2 border">Extra Child (0–5)</td><td className="p-2 border">Free</td><td className="p-2 border">Free</td></tr>
+                  <tr><td className="p-2 border">Extra Child (6–11)</td><td className="p-2 border">₹1500</td><td className="p-2 border">₹1800</td></tr>
+                  <tr><td className="p-2 border">Extra Child (12+)</td><td className="p-2 border">₹2500</td><td className="p-2 border">₹2800</td></tr>
+                  <tr><td className="p-2 border">Extra Bed (any age)</td><td className="p-2 border">₹2500</td><td className="p-2 border">₹2800</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            {/* Cancellation Policy */}
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">❌ Cancellation Policy</h3>
+            <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
+              <li><span className="font-semibold">Before 48 Hours:</span> 100% Refund</li>
+              <li><span className="font-semibold">Within 48 Hours:</span> 100% Charge</li>
+              <li><span className="font-semibold">No Show:</span> 100% Charge</li>
+            </ul>
+
+            {/* Single Book Now Button */}
+            <div className="md:col-span-2 mt-4">
+              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
+                Book Now
+              </button>
             </div>
           </div>
         </div>

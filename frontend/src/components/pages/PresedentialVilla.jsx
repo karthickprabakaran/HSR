@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield, Clock } from 'lucide-react';
-import img1 from '../../assets/images/rightview.jpg'
-
 
 const PresedentialVilla = () => {
   const room = {

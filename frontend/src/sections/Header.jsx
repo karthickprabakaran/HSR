@@ -17,8 +17,8 @@ const Header = () => {
       name: 'Suites',
       dropdown: true,
       children: [
-        { name: 'Junior Suite Private Pool Villa', path: '/junior-villa' },
-        { name: 'Presidential Family Suite Private Pool Villa', path: '/presedential-villa' },
+        { name: 'Junior Suite Private Pool Villa', path: '/juniorvilla' },
+        { name: 'Presidential Family Suite Private Pool Villa', path: '/presedential' },
         { name: 'HF Signature Family Private Pool Villa', path: '/hfsignature' }
       ]
     },
@@ -86,24 +86,23 @@ const Header = () => {
               {navigation.map((item) =>
                 item.dropdown ? (
                   // Suites Dropdown (Desktop)
-                  <div key="Suites" className="relative group">
+                  <div key="Suites" className="relative group" onMouseEnter={() => setIsSuitesOpen(true)} onMouseLeave={() => setIsSuitesOpen(false)}>
                     <button
-                      className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? 'border-b-2 border-white pb-1' : ''}`}
-                      onMouseEnter={() => setIsSuitesOpen(true)}
-                      onMouseLeave={() => setIsSuitesOpen(false)}
+                      className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? 'border-b-2 border-white pb-1' : ''}`}
+                      type="button"
+                      aria-haspopup="menu"
+                      aria-expanded={isSuitesOpen}
                     >
                       Suites <svg className="ml-2 w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                     </button>
                     <div
-                      className={`absolute left-0 top-full mt-2 w-64 bg-white rounded shadow-lg py-2 z-40 ${isSuitesOpen ? 'block' : 'hidden'} group-hover:block`}
-                      onMouseEnter={() => setIsSuitesOpen(true)}
-                      onMouseLeave={() => setIsSuitesOpen(false)}
+                      className={`absolute left-0 top-full w-72 bg-white rounded shadow-lg py-2 z-40 ${isSuitesOpen ? 'block' : 'hidden'}`}
                     >
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           to={child.path}
-                          className={`block px-6 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? 'font-bold text-blue-600 bg-gray-100' : ''}`}
+                          className={`cursor-pointer block px-6 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? 'font-bold text-blue-600 bg-gray-100' : ''}`}
                           onClick={() => setIsSuitesOpen(false)}
                         >
                           {child.name}
@@ -115,7 +114,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? 'border-b-2 border-white pb-1' : ''}`}
+                    className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? 'border-b-2 border-white pb-1' : ''}`}
                   >
                     {item.name}
                   </Link>

@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/juniorvilla" element={<JuniorPoolVilla />} />
-          <Route path="/presidential" element={< PresedentialVilla />} />
+          <Route path="/presedential" element={< PresedentialVilla />} />
           <Route path="/hfsignature" element={<Hfsignature />} />
           <Route path="/facilities" element={<Facilities />} />
         </Routes>

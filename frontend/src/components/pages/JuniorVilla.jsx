@@ -17,7 +17,7 @@ const JuniorSuiteVilla = () => {
     dining: true,
     size: 1200,
     maxGuests: 2,
-    description: 'Approx. 1200 Sq Ft. Ideal for couples, families, or business travelers. Features: Living area, kitchenette, mini fridge, smart TV, king bedroom, private pool with bar counter, luxury bathroom, Wi-Fi, intercom, work desk.',
+    description: 'Enjoy our Junior Suite Private Pool Villa measuring approx. 1200 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage and even group of friends alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofa, Dining Table, Pantry with kitchenette, Mini Fridge, 48 Inches Dedicated Internet with smart LED TV and satellite channels, A Master King Bed room, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Private luxury Swimming pool with Bar Counter and outdoor shower, Premium bathroom with Overhead Rain shower, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle With Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
     amenities: [
       'Dental Kit (Brush and Paste)',
       'Shaving Kit (Razor and Cream)',

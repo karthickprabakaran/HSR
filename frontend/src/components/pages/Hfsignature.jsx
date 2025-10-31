@@ -15,7 +15,7 @@ const HFSignatureVilla = () => {
     dining: true,
     size: 2000,
     maxGuests: 4,
-    description: 'Approx. 2000 Sq Ft. Two master bedrooms, large living and dining area, star-light swimming pool, outdoor shower, premium interiors, and full amenities.',
+    description: 'Enjoy our HF Signature Family Pool Villa measuring approx. 2000 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage, group of friends and get together alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofas, Luxury dining table, Pantry with kitchenette, Mini Fridge, 55 Inches Dedicated Internet with smart LED TV and satellite channels, 2 Master King Bed room with 2 attached premium bathroom, Overhead Rain shower, 2 Bathtubs, Spacious Private luxury star light swimming pool with Bar Counter and outdoor shower, Backyard Patio with seating area, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle with Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
     amenities: [
       'Dental Kit (Brush and Paste)',
       'Shaving Kit (Razor and Cream)',

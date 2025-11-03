@@ -112,6 +112,12 @@ const ContactPage = () => {
                       Akkarai, Chennai, 600119,<br />
                       Tamil Nadu, India
                     </p>
+                    <a href="https://www.google.com/maps/place/HF+Pool+Resorto/@12.9012271,80.246719,890m/data=!3m1!1e3!4m9!3m8!1s0x3a525d221176b595:0xfebede8688a6c409!5m2!4m1!1i2!8m2!3d12.9012271!4d80.2492939!16s%2Fg%2F11xdrm1jlt?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium transition underline text-sm">
+                      <span className="inline-flex items-center">
+                        <MapPin className="w-5 h-5 mr-1 -ml-1 text-blue-500" />
+                        View on Google Maps (12.901200942411188, 80.24923287520289)
+                      </span>
+                    </a>
                   </div>
                 </div>
 

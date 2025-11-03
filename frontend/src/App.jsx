@@ -7,7 +7,9 @@ import JuniorPoolVilla from './components/pages/JuniorVilla.jsx';
 import Hfsignature from './components/pages/Hfsignature.jsx';
 import PresedentialVilla from './components/pages/PresedentialVilla.jsx';
 import Facilities from './components/pages/Facilities.jsx';
-
+import SpecialOffers from './components/pages/SpecialOffers.jsx';
+import AttractionsPage from './components/pages/AttractionsPage.jsx';
+import Events from './components/pages/Events.jsx';
 
 
 function App() {
@@ -22,6 +24,9 @@ function App() {
           <Route path="/presedential" element={< PresedentialVilla />} />
           <Route path="/hfsignature" element={<Hfsignature />} />
           <Route path="/facilities" element={<Facilities />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/offers" element={<SpecialOffers />} />
+          <Route path="/attractions" element={<AttractionsPage />} />
         </Routes>
       </main>
       <Footer />

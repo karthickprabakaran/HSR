@@ -22,8 +22,8 @@ const Header = () => {
         { name: 'HF Signature Family Private Pool Villa', path: '/hfsignature' }
       ]
     },
-    { name: 'Special Offers', path: '/special-offers' },
-    { name: 'Lawn and Events', path: '/lawn-events' },
+    { name: 'Special Offers', path: '/offers' },
+    { name: 'Lawn and Events', path: '/events' },
     { name: 'Attractions', path: '/attractions' },
     { name: 'Contact', path: '/contact' }
   ];

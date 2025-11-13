@@ -41,8 +41,8 @@ const AvailableRooms = () => {
       image: img2,
       title: 'Junior Suite Pool Villa',
       rating: 9.0,
-      bedrooms: 2,
-      bathrooms: 2,
+      bedrooms: 1,
+      bathrooms: 1,
       dining: true,
       price: 15000,
       link: '/juniorvilla'
@@ -52,7 +52,7 @@ const AvailableRooms = () => {
       image: img1,
       title: 'Presidential Family Suite Pool Villa',
       rating: 9.5,
-      bedrooms: 3,
+      bedrooms: 2,
       bathrooms: 2,
       dining: true,
       price: 25000,
@@ -63,9 +63,9 @@ const AvailableRooms = () => {
       image: img3,
       title: 'HF Signature Pool Villa',
       rating: 9.8,
-      bedrooms: 4,
-      bathrooms: 3,
-      dining: true,
+      bedrooms: 2,
+      bathrooms: 2,
+      dining: true, 
       price: 30000,
       link: '/hfsignature'
     }

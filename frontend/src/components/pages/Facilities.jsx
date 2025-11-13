@@ -34,7 +34,7 @@ const Facilities = () => {
     "Toilet roll",
     "Laundry Bag",
     "Safe Locker",
-    "Mini Fridge",
+    "Mini Fridge"
   ];
 
   return (

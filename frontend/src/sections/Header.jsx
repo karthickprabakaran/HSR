@@ -4,7 +4,6 @@ import { Menu, X, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   // Check if we're on the home page
@@ -36,32 +35,10 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    // Only add scroll listener on home page
-    if (isHomePage) {
-      window.addEventListener('scroll', handleScroll);
-    } else {
-      setIsScrolled(true); // Always "scrolled" state on other pages
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [isHomePage]);
 
   // Determine header classes based on page and scroll state
   const getHeaderClasses = () => {
-    if (isHomePage) {
-      return isScrolled
-        ? 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/90 backdrop-blur-md shadow-lg py-2'
-        : 'fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent py-4';
-    } else {
-      return 'fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md shadow-lg py-2';
-    }
+      return 'fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md shadow-lg py-2';
   };
 
   return (

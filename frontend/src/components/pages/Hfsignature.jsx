@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield } from 'lucide-react';
+import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield, WavesLadder } from 'lucide-react';
 import img1 from '../../assets/images/straightangle_1.jpg'
 
 const HFSignatureVilla = () => {
@@ -12,40 +12,39 @@ const HFSignatureVilla = () => {
     rating: 9.0,
     bedrooms: 2,
     bathrooms: 2,
-    dining: true,
+    LivingSpace: true,
     size: 2000,
     maxGuests: 4,
-    description: 'Enjoy our HF Signature Family Pool Villa measuring approx. 2000 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage, group of friends and get together alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofas, Luxury dining table, Pantry with kitchenette, Mini Fridge, 55 Inches Dedicated Internet with smart LED TV and satellite channels, 2 Master King Bed room with 2 attached premium bathroom, Overhead Rain shower, 2 Bathtubs, Spacious Private luxury star light swimming pool with Bar Counter and outdoor shower, Backyard Patio with seating area, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle with Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
+    description: 'Enjoy our HF Signature Family Pool Villa measuring approx. 2000 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage, group of friends and get together alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofas, Luxury LivingSpace table, Pantry with kitchenette, Mini Fridge, 55 Inches Dedicated Internet with smart LED TV and satellite channels, 2 Master King Bed room with 2 attached premium bathroom, Overhead Rain shower, 2 Bathtubs, Spacious Private luxury star light swimming pool with Bar Counter and outdoor shower, Backyard Patio with seating area, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle with Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
     amenities: [
-      'Dental Kit (Brush and Paste)',
-      'Shaving Kit (Razor and Cream)',
-      'Soap - 20GM',
-      'Shampoo - 25 Ml',
-      'Shower Gel - 25Ml',
-      'Moisturizer - 25Ml',
+      'Dental Kit',
+      'Shaving Kit',
+      'Soap',
+      'Shampoo',
+      'Shower Gel',
+      'Moisturizer',
       'Comb',
       'Loofah',
-      'Bubble Bath for Bathtub - 25 Ml',
+      'Bubble Bath for Bathtub',
       'Bathroom Slippers',
-      '1 One Litre Brand Water Bottle',
-      'Shoe Shiner',
-      'Sanitizer Wipes',
+      'Complimentary Bottled Water',
       'Sewing Kit',
       'Medi Kit',
       'Stirrer',
       'Drinking Glass and Coffee Cups with lid',
       'Tissues Box',
       'Snacks with Tray',
-      'Chennai Map',
-      'Kettle with Black Tea Bags, Green Tea Bags',
+      'Kettle with Amenity Set',
       'Milk Powder, Sugar Powder',
-      'Bath Towel & Hand Towel',
+      'Bath Towel, Hand Towel',
       'Swimming Pool Towel',
       'Iron Box and Board',
       'Toilet roll',
       'Laundry Bag',
       'Safe Locker',
-      'Mini Fridge'
+      'Mini Fridge',
+      'Induction Stove',
+      'Oven on Request',
     ]
   };
 
@@ -96,10 +95,13 @@ const HFSignatureVilla = () => {
                 <Bath className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">2 Bathrooms, Outdoor Shower</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Spacious Living & Dining</span>
+                <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Spacious Living & LivingSpace</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
                 <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Starlight Pool, Premium Interiors</span>
+              </div>
+                            <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
+                <WavesLadder className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Private Pool</span>
               </div>
             </div>
             <div className="text-sm text-gray-600 mt-3"><span className="font-medium">Size:</span> {room.size.toLocaleString()} sq ft</div>
@@ -219,6 +221,8 @@ const HFSignatureVilla = () => {
               <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
                 <li>Extra Adult: <span className="font-semibold">Rs 2500</span></li>
                 <li>Extra Child: <span className="font-semibold">0-5 Free</span>, <span className="font-semibold">6-11 Rs 1500</span>, <span className="font-semibold">12 & Above 2500</span></li>
+                <li>Extra Bed: <span className="font-semibold">Rs 2500 on CP Plan for any age.</span></li>
+                <li>Extra Bed: <span className="font-semibold">Rs 2800 on EP Plan for any age.</span></li>
               </ul>
             </div>
           </div>

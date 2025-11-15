@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield } from 'lucide-react';
+import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield,WavesLadder } from 'lucide-react';
 import side from '../../assets/images/sideangle_1.jpg'
 
 
@@ -14,32 +14,29 @@ const JuniorSuiteVilla = () => {
     rating: 9.0,
     bedrooms: 1,
     bathrooms: 1,
-    dining: true,
+    LivingSpace: true,
     size: 1200,
     maxGuests: 2,
-    description: 'Enjoy our Junior Suite Private Pool Villa measuring approx. 1200 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage and even group of friends alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofa, Dining Table, Pantry with kitchenette, Mini Fridge, 48 Inches Dedicated Internet with smart LED TV and satellite channels, A Master King Bed room, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Private luxury Swimming pool with Bar Counter and outdoor shower, Premium bathroom with Overhead Rain shower, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle With Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
+    description: 'Enjoy our Junior Suite Private Pool Villa measuring approx. 1200 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage and even group of friends alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofa, LivingSpace Table, Pantry with kitchenette, Mini Fridge, 48 Inches Dedicated Internet with smart LED TV and satellite channels, A Master King Bed room, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Private luxury Swimming pool with outdoor shower, Premium bathroom with Overhead Rain shower, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle With Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
     amenities: [
-      'Dental Kit (Brush and Paste)',
-      'Shaving Kit (Razor and Cream)',
-      'Soap - 20GM',
-      'Shampoo - 25 Ml',
-      'Shower Gel - 25Ml',
-      'Moisturizer - 25Ml',
+      'Dental Kit',
+      'Shaving Kit',
+      'Soap',
+      'Shampoo',
+      'Shower Gel',
+      'Moisturizer',
       'Comb',
       'Loofah',
-      'Bubble Bath for Bathtub - 25 Ml',
+      'Bubble Bath for Bathtub',
       'Bathroom Slippers',
-      '2 One Litre Brand Water Bottle',
-      'Show Shiner',
-      'Sanitizer Wipes',
+      'Complimentary Bottled Water',
       'Sewing Kit',
       'Medi Kit',
       'Stirrer',
       'Drinking Glass and Coffee Cups with lid',
       'Tissues Box',
       'Snacks with Tray',
-      'Chennai Map',
-      'Kettle with like Black Tea Bags, Green Tea Bags',
+      'Kettle with Amenity Set',
       'Milk Powder, Sugar Powder',
       'Bath Towel, Hand Towel',
       'Swimming Pool Towel',
@@ -47,7 +44,9 @@ const JuniorSuiteVilla = () => {
       'Toilet roll',
       'Laundry Bag',
       'Safe Locker',
-      'Mini Fridge'
+      'Mini Fridge',
+      'Induction Stove',
+      'Oven on Request',
     ]
   };
 
@@ -101,11 +100,14 @@ const JuniorSuiteVilla = () => {
                 <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Couples/Families/Business</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Living + Kitchenette + Bar Counter</span>
+                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Living Space + Pantry </span>
+              </div>
+              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
+                <WavesLadder className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Private Pool</span>
               </div>
             </div>
             <div className="text-sm text-gray-600 mt-3"><span className="font-medium">Size:</span> {room.size.toLocaleString()} sq ft</div>
-            <div className="text-sm text-gray-600"><span className="font-medium">Features:</span> Wi-Fi, intercom, smart TV, work desk, private pool.</div>
+            <div className="text-sm text-gray-600"><span className="font-medium">Features:</span> Premium Wi-Fi, intercom, smart TV with Apps, work desk, private pool, Living Space with Dining and Pantry.</div>
 
             {/* Check-in / Check-out */}
             <div className="mt-6">
@@ -211,6 +213,35 @@ const JuniorSuiteVilla = () => {
             ))}
           </ul>
         </div>
+
+                {/* Extra Bed Details */}
+        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-6 flex items-start space-x-4">
+            <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Extra Bed Details</h3>
+              <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
+                <li>Extra Adult: <span className="font-semibold">Rs 2500</span></li>
+                <li>Extra Child: <span className="font-semibold">0-5 Free</span>, <span className="font-semibold">6-11 Rs 1500</span>, <span className="font-semibold">12 & Above 2500</span></li>
+                <li>Extra Bed: <span className="font-semibold">Rs 2500 on CP Plan for any age.</span></li>
+                <li>Extra Bed: <span className="font-semibold">Rs 2800 on EP Plan for any age.</span></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Cancellation Policy */}
+          <div className="bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-6 flex items-start space-x-4">
+            <Shield className="w-8 h-8 text-yellow-500 flex-shrink-0" />
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Cancellation Policy</h3>
+              <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
+                <li>If Cancelled Before 2 day or 48 Hrs: <span className="font-semibold">100% Refund</span></li>
+                <li>If Cancelled within 2 Day: <span className="font-semibold">100% Charge</span></li>
+                <li>If No Show: <span className="font-semibold">100% Charge</span></li>
+              </ul>
+            </div>
+          </div>
+          </div>
       </div>
     </div>
   );

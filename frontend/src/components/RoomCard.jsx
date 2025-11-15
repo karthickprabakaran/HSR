@@ -1,5 +1,5 @@
 import React from 'react'
-import { Star, Bed, Bath, Utensils } from 'lucide-react'
+import { Star, Bed, Bath, Utensils,ShowerHead } from 'lucide-react'
 
 const RoomCard = ({
   image,
@@ -7,7 +7,8 @@ const RoomCard = ({
   rating,
   bedrooms,
   bathrooms,
-  dining,
+  bathtub,
+  LivingSpace,
   price
 }) => {
   return (
@@ -49,15 +50,21 @@ const RoomCard = ({
         <div className="flex items-center justify-between text-gray-600 text-sm mb-4">
           <div className="flex items-center space-x-1">
             <Bed className="w-3.5 h-3.5 text-gray-400" />
-            <span>{bedrooms} Bed{bedrooms > 1 ? 's' : ''}</span>
+            <span>{bedrooms} King Bed{bedrooms > 1 ? 's' : ''}</span>
           </div>
+          <div className="flex items-center space-x-1">
+            <ShowerHead className="w-3.5 h-3.5 text-gray-400" />
+            <span>{bathrooms} Bath</span>
+          </div>
+          { bathtub && 
           <div className="flex items-center space-x-1">
             <Bath className="w-3.5 h-3.5 text-gray-400" />
-            <span>{bathrooms} Bath{bathrooms > 1 ? 's' : ''}</span>
+           <span>Bathtub</span>
           </div>
+    }
           <div className="flex items-center space-x-1">
             <Utensils className="w-3.5 h-3.5 text-gray-400" />
-            <span>Dining</span>
+            <span>Living Space</span>
           </div>
         </div>
 

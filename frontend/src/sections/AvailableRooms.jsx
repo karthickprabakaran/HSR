@@ -43,7 +43,7 @@ const AvailableRooms = () => {
       rating: 9.0,
       bedrooms: 1,
       bathrooms: 1,
-      dining: true,
+      LivingSpace: true,
       price: 15000,
       link: '/juniorvilla'
     },
@@ -54,9 +54,10 @@ const AvailableRooms = () => {
       rating: 9.5,
       bedrooms: 2,
       bathrooms: 2,
-      dining: true,
+      LivingSpace: true,
       price: 25000,
-      link: '/presidential'
+      link: '/presidential',
+      bathtub: true,
     },
     {
       id: 3,
@@ -65,9 +66,10 @@ const AvailableRooms = () => {
       rating: 9.8,
       bedrooms: 2,
       bathrooms: 2,
-      dining: true, 
+      LivingSpace: true,  
       price: 30000,
-      link: '/hfsignature'
+     bathtub: true,
+
     }
   ]
 
@@ -120,7 +122,7 @@ const AvailableRooms = () => {
                   rating={room.rating}
                   bedrooms={room.bedrooms}
                   bathrooms={room.bathrooms}
-                  dining={room.dining}
+                  LivingSpace={room.LivingSpace}
                   price={room.price}
                 />
               </Link>
@@ -137,8 +139,9 @@ const AvailableRooms = () => {
                   rating={room.rating}
                   bedrooms={room.bedrooms}
                   bathrooms={room.bathrooms}
-                  dining={room.dining}
+                  LivingSpace={room.LivingSpace}
                   price={room.price}
+                  bathtub={room.bathtub}
                 />
               </Link>
             ))}

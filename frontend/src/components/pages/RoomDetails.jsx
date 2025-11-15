@@ -18,7 +18,7 @@ const RoomsDetailsPage = () => {
       rating: 9.0,
       bedrooms: 2,
       bathrooms: 2,
-      dining: true,
+      LivingSpace: true,
       weekdayPrice: 15000,
       weekendPrice: 20000,
       size: 2500,
@@ -51,7 +51,7 @@ const RoomsDetailsPage = () => {
       rating: 9.5,
       bedrooms: 3,
       bathrooms: 2,
-      dining: true,
+      LivingSpace: true,
       weekdayPrice: 25000,
       weekendPrice: 30000,
       size: 2500,
@@ -67,7 +67,7 @@ const RoomsDetailsPage = () => {
         'Air Conditioning with Zoned Controls',
         'High-Speed Free Wi-Fi',
         'Room Service & Daily Housekeeping',
-        'Separate Family Dining Area',
+        'Separate Family LivingSpace Area',
         'Bathtub with Luxury Bath Products',
         'Balcony with Scenic Garden or Pool View',
         'Child-Friendly Amenities on Request'
@@ -85,7 +85,7 @@ const RoomsDetailsPage = () => {
       rating: 9.8,
       bedrooms: 4,
       bathrooms: 3,
-      dining: true,
+      LivingSpace: true,
       weekdayPrice: 30000,
       weekendPrice: 35000,
       size: 2500,
@@ -101,7 +101,7 @@ const RoomsDetailsPage = () => {
         'Air Conditioning with Smart Climate Control',
         'High-Speed Free Wi-Fi',
         'Room Service & Daily Housekeeping',
-        'Separate Family Dining Space',
+        'Separate Family LivingSpace Space',
         'Luxury Bathroom Amenities with Bathrobe & Slippers',
         'Private Balcony/Terrace with Panoramic Views',
         'Personalized Concierge Service',
@@ -171,7 +171,7 @@ const RoomsDetailsPage = () => {
                 <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Up to {room.maxGuests} Guests</span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Dining Available</span>
+                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">LivingSpace Available</span>
               </div>
             </div>
             <div className="text-sm text-gray-600 mt-3"><span className="font-medium">Size:</span> {room.size.toLocaleString()} sq ft</div>

@@ -7,17 +7,17 @@ import offer2 from '../../assets/images/events/File13.jpg';
 
 const offers = [
   {
-    title: 'Sunday to Friday - 10% Off',
+    title: 'Sunday to Friday - 20% Off',
     img: offer1,
     description: 'Enjoy a 10% discount on bookings from Sunday to Friday – perfect for weekday getaways.',
   },
   {
-    title: 'Saturday Special - 5% Off',
+    title: 'Saturday Special - 10% Off',
     img: offer2,
     description: 'Make your Saturday escape more special with 5% off. One night only, every weekend!',
   },
   {
-    title: 'Book 3 Nights - 15% Off',
+    title: 'Book 3 Nights - 20% Off',
     img: offer3,
     description: 'Stay longer and save—book three nights or more to receive a 15% discount on your stay.',
   },

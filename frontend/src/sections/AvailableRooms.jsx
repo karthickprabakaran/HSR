@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import RoomCard from '../components/RoomCard.jsx'
 
 import img1 from '../assets/images/PresIndex.jpg'
-import img2 from '../assets/images/Juindex.jpg'
+import img2 from '../assets/images/JuIndex.jpg'
 import img3 from '../assets/images/straightangle_1.jpg'
 
 const AvailableRooms = () => {

@@ -6,6 +6,9 @@ import event3 from '../../assets/images/events/File15.jpg';
 import event4 from '../../assets/images/events/File17.jpg';
 import event5 from '../../assets/images/events/File19.jpg';
 import event6 from '../../assets/images/events/File23.jpg';
+import event7 from '../../assets/images/events/File23.jpg';
+import event8 from '../../assets/images/events/File23.jpg';
+import event9 from '../../assets/images/events/File23.jpg';
 
 const eventTypes = [
   { title: 'Wedding', img: event1 },
@@ -13,7 +16,10 @@ const eventTypes = [
   { title: 'Corporate Event', img: event3 },
   { title: 'Party', img: event4 },
   { title: 'Private Party', img: event5 },
-  { title: 'Special Event', img: event6 }, // Placeholder for future or when you have another category
+  { title: 'Family Gathering', img: event6 }, 
+  { title: 'Get Together', img: event6 }, 
+  { title: 'Cultural Events', img: event6 }, 
+  { title: 'Community Gatherings', img: event6 }, 
 ];
 
 const Events = () => (

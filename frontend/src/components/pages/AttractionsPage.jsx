@@ -1,17 +1,15 @@
 import React from 'react';
 
-import KovalamBeach from '../../assets/images/attractions/Kovalambeach.jpg';
+import KovalamBeach from '../../assets/images/attractions/kovalam.jpg';
 import DakshinaChitra from '../../assets/images/attractions/musuem.jpg';
 import EdwardElliotBeach from '../../assets/images/attractions/edwartbeach.jpg';
 import Mahabalipuram from '../../assets/images/attractions/Mahaballipuram.jpeg';
 import Boathouse from '../../assets/images/attractions/Boathouse.jpeg';
 import MGM from '../../assets/images/attractions/mgm.jpeg';
 import VGP from '../../assets/images/attractions/vgp.jpeg';
+import beach from '../../assets/images/attractions/Akkarai.avif';
+import croc from '../../assets/images/attractions/croc.jpg'
 
-// Existing/legacy sample imports remain (if needed for current grid)
-import beach from '../../assets/images/attractions/AkkaraiBeach.jpg';
-import park from '../../assets/images/attractions/Kovalambeach.jpg';
-// Add more images as required
 
 const attractions = [
   {
@@ -52,7 +50,12 @@ const attractions = [
   {
     title: 'Akkarai Beach',
     description: 'Beautiful sunrise views, clean sands, and great for evening strolls near the resort.',
-    img: KovalamBeach // Temporarily using KovalamBeach image; user should change when available.
+    img: beach
+  },
+  {
+    title: 'Crocodile Park',
+    description: 'Beautiful sunrise views, clean sands, and great for evening strolls near the resort.',
+    img: croc
   }
 ];
 

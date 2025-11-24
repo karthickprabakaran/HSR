@@ -121,43 +121,9 @@ const ContactPage = () => {
                   </div>
                 </div>
 
-                {/* Contact Person */}
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <User className="w-6 h-6 text-blue-600" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-1">Contact Person</h3>
-                    <p className="text-gray-600 mb-1">Speak directly with our manager</p>
-                    <p className="text-blue-600 font-medium">Mohan Babu</p>
-                  </div>
-                </div>
               </div>
             </div>
 
-            {/* Business Hours */}
-            <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-blue-600" />
-                Business Hours
-              </h3>
-              <div className="space-y-2 text-sm">
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Monday - Friday</span>
-                  <span className="text-gray-900 font-medium">9:00 AM - 8:00 PM</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-gray-600">Saturday - Sunday</span>
-                  <span className="text-gray-900 font-medium">9:00 AM - 9:00 PM</span>
-                </div>
-                <div className="flex justify-between pt-2 border-t border-gray-100">
-                  <span className="text-gray-600">Emergency Contact</span>
-                  <span className="text-blue-600 font-medium">24/7 Available</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}

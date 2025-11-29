@@ -1,6 +1,6 @@
 {
     "editor.fontSize": 13,
     "workbench.preferredHighContrastColorTheme": "Default Dark Modern",
-    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.preferredHighContrastLightColorTheme": "Abyss"
 }

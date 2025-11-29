@@ -1,32 +1,45 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Facebook, Twitter, Instagram } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Facebook, Twitter, Instagram } from "lucide-react";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-
+  const [isScrolled, setIsScrolled] = useState(false);
   // Check if we're on the home page
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   // NEW NAVIGATION STRUCTURE
   const navigation = [
-    { name: 'Home', path: '/' },
+    { name: "Home", path: "/" },
     {
-      name: 'Suites',
+      name: "Suites",
       dropdown: true,
       children: [
-        { name: 'Junior Suite Private Pool Villa', path: '/juniorvilla' },
-        { name: 'Presidential Family Suite Private Pool Villa', path: '/presedential' },
-        { name: 'HF Signature Family Private Pool Villa', path: '/hfsignature' }
-      ]
+        { name: "Junior Suite Private Pool Villa", path: "/juniorvilla" },
+        {
+          name: "Presidential Family Suite Private Pool Villa",
+          path: "/presedential",
+        },
+        {
+          name: "HF Signature Family Private Pool Villa",
+          path: "/hfsignature",
+        },
+      ],
     },
-    { name: 'Special Offers', path: '/offers' },
-    { name: 'Lawn and Events', path: '/events' },
-    { name: 'Attractions', path: '/attractions' },
-    { name: 'Contact', path: '/contact' }
+    { name: "Special Offers", path: "/offers" },
+    { name: "Lawn and Events", path: "/events" },
+    { name: "Attractions", path: "/attractions" },
+    { name: "Contact", path: "/contact" },
   ];
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
 
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   const [isSuitesOpen, setIsSuitesOpen] = useState(false);
 
   const isActive = (path) => location.pathname === path;
@@ -35,10 +48,11 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-
   // Determine header classes based on page and scroll state
   const getHeaderClasses = () => {
-      return 'fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md shadow-lg py-2';
+    return isScrolled
+      ? "fixed top-0 left-0 right-0 z-50 bg-black/100 backdrop-blur-md shadow-lg py-2 transition-all duration-300"
+      : "fixed top-0 left-0 right-0 z-50 bg-transparent py-4 transition-all duration-300";
   };
 
   return (
@@ -47,14 +61,17 @@ const Header = () => {
       <header className={getHeaderClasses()}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-
             {/* Logo - Top Left */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 border border-white/20 flex items-center justify-center mr-2 lg:mr-3">
-                <span className="text-white font-bold text-xl lg:text-xl">HF</span>
+                <span className="text-white font-bold text-xl lg:text-xl">
+                  HF
+                </span>
               </div>
               <div className="text-white">
-                <p className="text-lg tracking-[0.2em] font-bold text-white uppercase">Pool Resorto</p>
+                <p className="text-lg tracking-[0.2em] font-bold text-white uppercase">
+                  Pool Resorto
+                </p>
               </div>
             </Link>
 
@@ -63,23 +80,41 @@ const Header = () => {
               {navigation.map((item) =>
                 item.dropdown ? (
                   // Suites Dropdown (Desktop)
-                  <div key="Suites" className="relative group" onMouseEnter={() => setIsSuitesOpen(true)} onMouseLeave={() => setIsSuitesOpen(false)}>
+                  <div
+                    key="Suites"
+                    className="relative group"
+                    onMouseEnter={() => setIsSuitesOpen(true)}
+                    onMouseLeave={() => setIsSuitesOpen(false)}
+                  >
                     <button
-                      className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? 'border-b-2 border-white pb-1' : ''}`}
+                      className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? "border-b-2 border-white pb-1" : ""}`}
                       type="button"
                       aria-haspopup="menu"
                       aria-expanded={isSuitesOpen}
                     >
-                      Suites <svg className="ml-2 w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                      Suites{" "}
+                      <svg
+                        className="ml-2 w-3 h-3"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
                     </button>
                     <div
-                      className={`absolute left-0 top-full w-72 bg-white rounded shadow-lg py-2 z-40 ${isSuitesOpen ? 'block' : 'hidden'}`}
+                      className={`absolute left-0 top-full w-72 bg-white rounded shadow-lg py-2 z-40 ${isSuitesOpen ? "block" : "hidden"}`}
                     >
                       {item.children.map((child) => (
                         <Link
                           key={child.name}
                           to={child.path}
-                          className={`cursor-pointer block px-6 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? 'font-bold text-blue-600 bg-gray-100' : ''}`}
+                          className={`cursor-pointer block px-6 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? "font-bold text-blue-600 bg-gray-100" : ""}`}
                           onClick={() => setIsSuitesOpen(false)}
                         >
                           {child.name}
@@ -91,11 +126,11 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? 'border-b-2 border-white pb-1' : ''}`}
+                    className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? "border-b-2 border-white pb-1" : ""}`}
                   >
                     {item.name}
                   </Link>
-                )
+                ),
               )}
             </nav>
 
@@ -152,7 +187,10 @@ const Header = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-30 lg:hidden">
-          <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" onClick={toggleMobileMenu}></div>
+          <div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm"
+            onClick={toggleMobileMenu}
+          ></div>
 
           <div className="fixed top-20 right-0 w-80 h-[calc(100vh-5rem)] bg-white shadow-2xl transform transition-transform duration-300 rounded-tl-lg">
             <div className="flex items-center justify-between p-6 border-b">
@@ -161,7 +199,9 @@ const Header = () => {
                   <span className="text-white font-bold text-lg">HF</span>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500 uppercase tracking-wider">Resort</p>
+                  <p className="text-xs text-gray-500 uppercase tracking-wider">
+                    Resort
+                  </p>
                 </div>
               </div>
               <button
@@ -178,7 +218,12 @@ const Header = () => {
                   item.dropdown ? (
                     // Suites Dropdown (Mobile)
                     <li key="Suites">
-                      <details className="group" open={item.children.some(child => isActive(child.path))}>
+                      <details
+                        className="group"
+                        open={item.children.some((child) =>
+                          isActive(child.path),
+                        )}
+                      >
                         <summary className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block cursor-pointer flex justify-between items-center">
                           Suites <span className="ml-2 text-xs">▼</span>
                         </summary>
@@ -187,7 +232,7 @@ const Header = () => {
                             <li key={child.name}>
                               <Link
                                 to={child.path}
-                                className={`block py-2 text-gray-700 hover:text-blue-600 font-medium text-sm ${isActive(child.path) ? 'text-blue-600 font-bold' : ''}`}
+                                className={`block py-2 text-gray-700 hover:text-blue-600 font-medium text-sm ${isActive(child.path) ? "text-blue-600 font-bold" : ""}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
                                 {child.name}
@@ -201,25 +246,34 @@ const Header = () => {
                     <li key={item.name}>
                       <Link
                         to={item.path}
-                        className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? 'text-blue-600 border-l-4 border-blue-600 pl-4' : ''}`}
+                        className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? "text-blue-600 border-l-4 border-blue-600 pl-4" : ""}`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
                       </Link>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
 
               {/* Mobile Social Links */}
               <div className="flex justify-center space-x-6 mt-8 pt-6 border-t">
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
                   <Twitter className="w-5 h-5" />
                 </a>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                >
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>

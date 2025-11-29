@@ -5,25 +5,29 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/grid";
 
-import img1 from '../assets/images/Pool_1.jpg';
-import img2 from '../assets/images/straightangle_1.jpg';
-import img3 from '../assets/images/living_1.jpg';
-import img4 from '../assets/images/seating_1.jpg';
-import img5 from '../assets/images/reception_1.jpg';
-import img6 from '../assets/images/EntranceWall_1.jpg';
-import img7 from '../assets/images/rightview.jpg';
-import img8 from '../assets/images/sideangle_1.jpg';
-import img9 from '../assets/images/longentrance_1.jpg';
-import img10 from '../assets/images/straightangle_1.jpg';
-import img11 from '../assets/images/bath_1.jpg';
+import img1 from "../assets/images/Pool_1.jpg";
+import img2 from "../assets/images/straightangle_1.jpg";
+import img3 from "../assets/images/living_1.jpg";
+import img4 from "../assets/images/seating_1.jpg";
+import img5 from "../assets/images/reception_1.jpg";
+import img6 from "../assets/images/EntranceWall_1.jpg";
+import img7 from "../assets/images/rightview.jpg";
+import img8 from "../assets/images/sideangle_1.jpg";
+import img9 from "../assets/images/longentrance_1.jpg";
+import img10 from "../assets/images/straightangle_1.jpg";
+import img11 from "../assets/images/bath_1.jpg";
+import tub1 from "../assets/images/Common/tub1.jpg";
+import tub2 from "../assets/images/Common/tub2.jpg";
 
 const mediaItems = [
   { type: "image", src: img1 },
+  { type: "image", src: tub1 },
   { type: "video", src: "/videos/1.mp4" },
   { type: "image", src: img2 },
   { type: "video", src: "/videos/18.mp4" },
   { type: "image", src: img3 },
   { type: "video", src: "/videos/22.mp4" },
+  { type: "img", src: "tub2" },
   { type: "image", src: img4 },
   { type: "video", src: "/videos/23.mp4" },
   { type: "image", src: img5 },
@@ -43,10 +47,11 @@ const MediaGallerySlider = () => {
     <section className="py-24 px-6 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-          HF's  Gallery
+          HF's Gallery
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Explore our resort through images and videos for an immersive experience.
+          Explore our resort through images and videos for an immersive
+          experience.
         </p>
       </div>
 

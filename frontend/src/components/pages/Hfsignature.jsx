@@ -1,21 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Star, Bed, Bath, Utensils, Users, Shield, WavesLadder } from 'lucide-react';
-import img1 from '../../assets/images/straightangle_1.jpg'
+import img1 from '../../assets/images/straightangle_1.jpg';
 
 const HFSignatureVilla = () => {
   const room = {
     title: 'HF Signature Family Private Pool Villa',
-    images: [
-      img1
-    ],
+    images: [img1],
     rating: 9.0,
     bedrooms: 2,
     bathrooms: 2,
     LivingSpace: true,
     size: 2000,
     maxGuests: 4,
-    description: 'Enjoy our HF Signature Family Pool Villa measuring approx. 2000 Sq Ft, designed in white tones and tailored to the needs of private, couples, leisure, business travelers, family, Marriage, group of friends and get together alike. Villa have a premium living space with seating area and Air conditioned, Leather Sofas, Luxury LivingSpace table, Pantry with kitchenette, Mini Fridge, 55 Inches Dedicated Internet with smart LED TV and satellite channels, 2 Master King Bed room with 2 attached premium bathroom, Overhead Rain shower, 2 Bathtubs, Spacious Private luxury star light swimming pool with Bar Counter and outdoor shower, Backyard Patio with seating area, Wardrobe with Hanger, Safe Deposit Locker, Bathrobe, Hairdryer, Hot and Cold water in Washbasin with LED Mirrors, Toiletries, Kettle with Amenity, Intercom, Key card door Lock, Work Desk with free Daily high speed WIFI access, Teapoy with chairs.',
+    description:
+      'Enjoy our HF Signature Family Pool Villa measuring approx. 2000 Sq Ft, designed in white tones...',
     amenities: [
       'Dental Kit',
       'Shaving Kit',
@@ -45,7 +44,7 @@ const HFSignatureVilla = () => {
       'Mini Fridge',
       'Induction Stove',
       'Oven on Request',
-    ]
+    ],
   };
 
   return (
@@ -62,182 +61,187 @@ const HFSignatureVilla = () => {
 
       {/* Page Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Images & Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left Column - Images */}
-          <div className="space-y-4">
-            <div className="relative group rounded-xl overflow-hidden shadow-lg">
-              <img src={room.images[0]} alt={room.title} className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105" />
-              <div className="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full shadow-lg flex items-center space-x-1 text-sm font-semibold">
-                <Star className="w-4 h-4" /> <span>{room.rating}</span>
+          {/* LEFT COLUMN — (Images + Checkin + CP + EP) */}
+          <div className="space-y-6">
+
+            {/* Images */}
+            <div className="space-y-4">
+              <div className="relative group rounded-xl overflow-hidden shadow-lg">
+                <img
+                  src={room.images[0]}
+                  alt={room.title}
+                  className="w-full h-96 object-cover transition-transform duration-300 group-hover:scale-105"
+                />
+                <div className="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full shadow-lg flex items-center space-x-1 text-sm font-semibold">
+                  <Star className="w-4 h-4" /> <span>{room.rating}</span>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {room.images.slice(1).map((img, idx) => (
-                <img key={idx} src={img} alt={`${room.title} ${idx + 2}`} className="w-full h-48 object-cover rounded-lg shadow-sm hover:shadow-md transition" />
-              ))}
+
+            {/* Check-in / Check-out */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-semibold mb-4 flex items-center">
+                <span className="bg-blue-600 text-white p-2 rounded-lg mr-3">🕒</span>
+                Check-in / Check-out Times
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
+                  <p className="text-sm text-gray-600 mb-1">Check-in</p>
+                  <p className="text-2xl font-bold text-gray-900">1:00 PM</p>
+                </div>
+                <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
+                  <p className="text-sm text-gray-600 mb-1">Check-out</p>
+                  <p className="text-2xl font-bold text-gray-900">11:00 AM</p>
+                </div>
+              </div>
+            </div>
+
+            {/* CP Plan */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold flex items-center mb-3">
+                <span className="bg-blue-600 text-white p-2 rounded-lg mr-3">🍳</span>
+                CP Plan (Room + Breakfast)
+              </h3>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <p className="text-sm text-gray-600">Weekday</p>
+                    <p className="text-xl font-bold">₹36,000</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Weekend</p>
+                    <p className="text-xl font-bold">₹41,000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* EP Plan */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold flex items-center mb-3">
+                <span className="bg-blue-600 text-white p-2 rounded-lg mr-3">🛏️</span>
+                EP Plan (Room Only)
+              </h3>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  <div>
+                    <p className="text-sm text-gray-600">Weekday</p>
+                    <p className="text-xl font-bold">₹35,000</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Weekend</p>
+                    <p className="text-xl font-bold">₹40,000</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Right Column - Details */}
+          {/* RIGHT COLUMN — (Extra Guest + Cancellation + Room Info) */}
           <div className="space-y-6">
+
+            {/* Heading + Description */}
             <div>
-              <h1 className="text-4xl font-bold text-gray-900 mb-3">{room.title}</h1>
+              <h1 className="text-4xl font-bold mb-3">{room.title}</h1>
               <p className="text-lg text-gray-600">{room.description}</p>
             </div>
 
             {/* Room Specs */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Bed className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">2 Master Bedrooms</span>
+              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
+                <Bed className="w-6 h-6 text-gray-500" /> <span>2 Master Bedrooms</span>
               </div>
-              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Bath className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">2 Bathrooms, Outdoor Shower</span>
+              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
+                <Bath className="w-6 h-6 text-gray-500" /> <span>2 Bathrooms</span>
               </div>
-              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Users className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Spacious Living & LivingSpace</span>
+              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
+                <Users className="w-6 h-6 text-gray-500" /> <span>Living Space</span>
               </div>
-              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <Utensils className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Starlight Pool, Premium Interiors</span>
+              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
+                <Utensils className="w-6 h-6 text-gray-500" /> <span>Premium Interiors</span>
               </div>
-                            <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm hover:shadow-md transition">
-                <WavesLadder className="w-6 h-6 text-gray-500" /> <span className="font-medium text-gray-700">Private Pool</span>
-              </div>
-            </div>
-            <div className="text-sm text-gray-600 mt-3"><span className="font-medium">Size:</span> {room.size.toLocaleString()} sq ft</div>
-            <div className="text-sm text-gray-600"><span className="font-medium">Other Features:</span> Outdoor shower, full amenities.</div>
-
-            {/* Check-in / Check-out */}
-            <div className="mt-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1 flex items-center">🕒 Check-in / Check-out</h3>
-              <div className="flex space-x-6 text-base text-gray-800 font-medium">
-                <span>Check-in: <span className="font-bold">1:00 PM</span></span>
-                <span>Check-out: <span className="font-bold">11:00 AM</span></span>
+              <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
+                <WavesLadder className="w-6 h-6 text-gray-500" /> <span>Private Pool</span>
               </div>
             </div>
 
-            {/* CP Plan Pricing Table */}
-            <div className="mt-8">
-              <h3 className="text-lg font-bold text-blue-700 mb-2">CP Plan (Room + Breakfast)</h3>
-              <div className="text-sm text-gray-500 mb-2">(Weekday = Sun–Fri, Weekend = Only Saturday)</div>
-              <table className="min-w-full border border-gray-300 text-base mb-6">
-                <thead>
-                  <tr className="bg-gray-100 text-gray-600">
-                    <th className="p-2 border">Room Type</th>
-                    <th className="p-2 border">Sq Ft</th>
-                    <th className="p-2 border">Weekday (Sun–Fri)</th>
-                    <th className="p-2 border">Weekend (Sat)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="text-center">
-                    <td className="p-2 border">HF Signature Family Private Pool Villa</td>
-                    <td className="p-2 border">2000</td>
-                    <td className="p-2 border">₹36,000 +18%</td>
-                    <td className="p-2 border">₹41,000 +18%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* EP Plan Pricing Table */}
-            <div className="mt-3">
-              <h3 className="text-lg font-bold text-blue-700 mb-2">EP Plan (Room Only)</h3>
-              <div className="text-sm text-gray-500 mb-2">(Weekday = Sun–Fri, Weekend = Only Saturday)</div>
-              <table className="min-w-full border border-gray-300 text-base mb-6">
-                <thead>
-                  <tr className="bg-gray-100 text-gray-600">
-                    <th className="p-2 border">Room Type</th>
-                    <th className="p-2 border">Sq Ft</th>
-                    <th className="p-2 border">Weekday (Sun–Fri)</th>
-                    <th className="p-2 border">Weekend (Sat)</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="text-center">
-                    <td className="p-2 border">HF Signature Family Private Pool Villa</td>
-                    <td className="p-2 border">2000</td>
-                    <td className="p-2 border">₹35,000 +18%</td>
-                    <td className="p-2 border">₹40,000 +18%</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            {/* Extra Guest Policy Table */}
-            <div className="mt-8">
-              <h3 className="text-lg font-bold text-blue-700 mb-2 flex items-center">👨‍👩‍👧‍👦 Extra Guest Policy</h3>
-              <table className="min-w-full border border-gray-300 text-base">
-                <thead>
-                  <tr className="bg-gray-100 text-gray-600">
-                    <th className="p-2 border">Type</th>
-                    <th className="p-2 border">EP Plan</th>
-                    <th className="p-2 border">CP Plan</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td className="p-2 border">Extra Adult</td><td className="p-2 border">₹2500</td><td className="p-2 border">₹2800</td></tr>
-                  <tr><td className="p-2 border">Extra Child (0–5)</td><td className="p-2 border">Free</td><td className="p-2 border">Free</td></tr>
-                  <tr><td className="p-2 border">Extra Child (6–11)</td><td className="p-2 border">₹1500</td><td className="p-2 border">₹1800</td></tr>
-                  <tr><td className="p-2 border">Extra Child (12+)</td><td className="p-2 border">₹2500</td><td className="p-2 border">₹2800</td></tr>
-                  <tr><td className="p-2 border">Extra Bed (any age)</td><td className="p-2 border">₹2500</td><td className="p-2 border">₹2800</td></tr>
-                </tbody>
-              </table>
+            {/* Extra Guest Policy */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold mb-4 flex items-center">
+                <span className="bg-blue-600 text-white p-2 rounded-lg mr-3">👨‍👩‍👧‍👦</span>
+                Extra Guest Policy
+              </h3>
+              <div className="space-y-3">
+                <div className="bg-white p-3 rounded-xl shadow-sm border">
+                  <div className="flex justify-between">
+                    <span>Extra Adult</span>
+                    <span className="font-bold">₹2,500 / ₹2,800</span>
+                  </div>
+                </div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border">
+                  <div className="flex justify-between">
+                    <span>Child (0–5)</span>
+                    <span className="font-bold text-green-600">Free</span>
+                  </div>
+                </div>
+                <div className="bg-white p-3 rounded-xl shadow-sm border">
+                  <div className="flex justify-between">
+                    <span>Child (6–11)</span>
+                    <span className="font-bold">₹1,500 / ₹1,800</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Cancellation Policy */}
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">❌ Cancellation Policy</h3>
-            <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
-              <li><span className="font-semibold">Before 48 Hours:</span> 100% Refund</li>
-              <li><span className="font-semibold">Within 48 Hours:</span> 100% Charge</li>
-              <li><span className="font-semibold">No Show:</span> 100% Charge</li>
-            </ul>
+            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border border-orange-100">
+              <h3 className="text-lg font-bold mb-4 flex items-center">
+                <span className="bg-orange-600 text-white p-2 rounded-lg mr-3">❌</span>
+                Cancellation Policy
+              </h3>
 
-            {/* Single Book Now Button */}
-            <div className="md:col-span-2 mt-4">
-              <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium transition">
-                Book Now
-              </button>
+              <div className="space-y-2">
+                <div className="bg-white p-3 rounded-xl shadow-sm border flex items-center">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
+                  <div>
+                    <p className="font-medium">Before 48 Hours</p>
+                    <p className="text-sm text-green-600">100% Refund</p>
+                  </div>
+                </div>
+
+                <div className="bg-white p-3 rounded-xl shadow-sm border flex items-center">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
+                  <div>
+                    <p className="font-medium">Within 48 Hours</p>
+                    <p className="text-sm text-orange-600">100% Charge</p>
+                  </div>
+                </div>
+
+                <div className="bg-white p-3 rounded-xl shadow-sm border flex items-center">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
+                  <div>
+                    <p className="font-medium">No Show</p>
+                    <p className="text-sm text-red-600">100% Charge</p>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            {/* Book Now Button */}
+            <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium">
+              Book Now
+            </button>
           </div>
         </div>
 
         {/* Amenities */}
-        <div className="mt-12">
-          <h2 className="text-2xl font-semibold text-[#425C4C] mb-6">Amenities & Features</h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-2 gap-x-6 list-disc list-inside text-[#425C4C] text-base font-normal leading-snug">
-            {room.amenities.map((amenity, idx) => (
-              <li key={idx}>{amenity}</li>
+        <div className="mt-12 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-100">
+          <h2 className="text-3xl font-bold mb-6 text-center">✨ Premium Amenities</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {room.amenities.map((a, i) => (
+              <div key={i} className="bg-white p-4 rounded-xl shadow-sm border">{a}</div>
             ))}
-          </ul>
-        </div>
-
-        {/* Extra Bed Details */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-6 flex items-start space-x-4">
-            <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Extra Bed Details</h3>
-              <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
-                <li>Extra Adult: <span className="font-semibold">Rs 2500</span></li>
-                <li>Extra Child: <span className="font-semibold">0-5 Free</span>, <span className="font-semibold">6-11 Rs 1500</span>, <span className="font-semibold">12 & Above 2500</span></li>
-                <li>Extra Bed: <span className="font-semibold">Rs 2500 on CP Plan for any age.</span></li>
-                <li>Extra Bed: <span className="font-semibold">Rs 2800 on EP Plan for any age.</span></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Cancellation Policy */}
-          <div className="bg-white/80 backdrop-blur-md border border-gray-100 shadow-lg rounded-2xl p-6 flex items-start space-x-4">
-            <Shield className="w-8 h-8 text-yellow-500 flex-shrink-0" />
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Cancellation Policy</h3>
-              <ul className="text-gray-700 text-base list-disc list-inside space-y-1">
-                <li>If Cancelled Before 2 day or 48 Hrs: <span className="font-semibold">100% Refund</span></li>
-                <li>If Cancelled within 2 Day: <span className="font-semibold">100% Charge</span></li>
-                <li>If No Show: <span className="font-semibold">100% Charge</span></li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

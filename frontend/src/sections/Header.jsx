@@ -50,9 +50,8 @@ const Header = () => {
 
   // Determine header classes based on page and scroll state
   const getHeaderClasses = () => {
-    return isScrolled
-      ? "fixed top-0 left-0 right-0 z-50 bg-black/100 backdrop-blur-md shadow-lg py-2 transition-all duration-300"
-      : "fixed top-0 left-0 right-0 z-50 bg-transparent py-4 transition-all duration-300";
+    return "fixed top-0 left-0 right-0 z-50 bg-black/100 backdrop-blur-md shadow-lg py-4 transition-all duration-300"
+    //"fixed top-0 left-0 right-0 z-50 bg-transparent  py-4 transition-all duration-300";
   };
 
   return (

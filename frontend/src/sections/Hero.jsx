@@ -185,6 +185,7 @@ const Hero = () => {
         {/* Book Button */}
         <div className="hidden sm:flex flex-col">
           <button
+          onClick={() => window.location.href = 'tel:9384842525'}
             className={`w-full ${colors.primary} ${buttons.medium} flex flex-col justify-center text-center`}
           >
             <span className="text-xs opacity-90">From 4,100 INR/Night</span>

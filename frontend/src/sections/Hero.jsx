@@ -9,42 +9,26 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
 
+  // Dynamic dates
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  
+  const formatDate = (date) => {
+    return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
+  };
+  
+  const checkInDate = formatDate(today);
+  const checkOutDate = formatDate(tomorrow);
+
   const slides = [
-    {
-      type: "video",
-      src: "/videos/27.mp4",
-      alt: "Resort Pool View",
-    },
-    {
-      type: "image",
-      src: seating,
-      alt: "Beach Resort",
-    },
-    {
-      type: "image",
-      src: side,
-      alt: "Mountain View",
-    },
-    {
-      type: "video",
-      src: "/videos/32.mp4",
-      alt: "Resort Video",
-    },
-    {
-      type: "video",
-      src: "/videos/30.mp4",
-      alt: "Resort Pool View",
-    },
-    {
-      type: "video",
-      src: "/videos/1.mp4",
-      alt: "Beachfront Villa",
-    },
-    {
-      type: "video",
-      src: "/videos/23.mp4",
-      alt: "Modern Resort Interior",
-    },
+    { type: "video", src: "/videos/27.mp4", alt: "Resort Pool View" },
+    { type: "image", src: seating, alt: "Beach Resort" },
+    { type: "image", src: side, alt: "Mountain View" },
+    { type: "video", src: "/videos/32.mp4", alt: "Resort Video" },
+    { type: "video", src: "/videos/30.mp4", alt: "Resort Pool View" },
+    { type: "video", src: "/videos/1.mp4", alt: "Beachfront Villa" },
+    { type: "video", src: "/videos/23.mp4", alt: "Modern Resort Interior" },
   ];
 
   useEffect(() => {
@@ -106,7 +90,7 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* EMPTY Content Overlay (Center Content Removed) */}
+      {/* EMPTY Content Overlay */}
       <div className="relative z-10 flex items-center justify-center min-h-screen"></div>
 
       {/* Navigation Arrows */}
@@ -129,11 +113,7 @@ const Hero = () => {
         onClick={togglePlayPause}
         className="absolute top-20 md:top-24 right-4 md:right-8 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
       >
-        {isPlaying ? (
-          <Pause className="w-5 h-5" />
-        ) : (
-          <Play className="w-5 h-5" />
-        )}
+        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
       </button>
 
       {/* Slide Indicators */}
@@ -154,62 +134,62 @@ const Hero = () => {
       {/* Bottom Information Bar */}
       <div
         className="
-    absolute -bottom-[-6%] left-1/2 transform -translate-x-1/2
-    w-[95%] md:w-[85%] lg:w-[75%]
-    bg-white shadow-xl rounded-xl
-    z-30
-    grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4
-    p-5
-  "
+          absolute -bottom-[-6%] left-1/2 transform -translate-x-1/2
+          w-[95%] md:w-[85%] lg:w-[75%]
+          bg-white shadow-xl rounded-xl
+          z-30
+          grid grid-cols-1 sm:grid-cols-5 gap-4
+          p-5
+        "
       >
+        {/* Mobile: ONLY Book Now */}
+        <div className="sm:hidden col-span-1">
+          <button
+            className="w-full text-white font-semibold rounded-lg px-4 py-3 flex flex-col items-center"
+            style={{ backgroundColor: "rgb(38,116,255)" }}
+          >
+            <span className="text-xs opacity-90">From 4,100 INR/Night</span>
+            <span className="text-lg font-bold">Book Now</span>
+          </button>
+        </div>
+
+        {/* Desktop Fields */}
         {/* Location */}
-        <div className="flex flex-col">
+        <div className="hidden sm:flex flex-col h-[10%] ">
           <span className="text-gray-500 text-sm">Location</span>
           <span className="font-semibold text-gray-800">Tamil Nadu</span>
         </div>
 
         {/* Hotel */}
-        <div className="flex flex-col">
+        <div className="hidden sm:flex flex-col">
           <span className="text-gray-500 text-sm">Hotel</span>
           <span className="font-semibold text-gray-800">
-            MM Legacy, Kanchipuram
+            HF Pool Resorto  
           </span>
         </div>
 
         {/* Check In */}
-        <div className="flex flex-col">
+        <div className="hidden sm:flex flex-col">
           <span className="text-gray-500 text-sm">Check In</span>
-          <span className="font-semibold text-gray-800">29/11/2025</span>
+          <span className="font-semibold text-gray-800">{checkInDate}</span>
         </div>
 
         {/* Check Out */}
-        <div className="flex flex-col">
+        <div className="hidden sm:flex flex-col">
           <span className="text-gray-500 text-sm">Check Out</span>
-          <span className="font-semibold text-gray-800">30/11/2025</span>
+          <span className="font-semibold text-gray-800">{checkOutDate}</span>
         </div>
 
-        {/* Book Now */}
-        <button
-          className="
-    text-white
-    font-semibold rounded-lg px-4 py-3
-    transition-all duration-300
-    flex flex-col justify-center text-center
-  "
-          style={{
-            backgroundColor: "rgb(38,116,255)",
-          }}
-          onMouseEnter={(e) =>
-            (e.currentTarget.style.backgroundColor = "rgb(28,96,225)")
-          }
-          onMouseLeave={(e) =>
-            (e.currentTarget.style.backgroundColor = "rgb(38,116,255)")
-          }
-        >
-          <span className="text-xs opacity-90">From 4,100 INR/Night</span>
-          <span className="text-lg font-bold">Book Now</span>
-          <span className="text-xs opacity-90">Why Book Direct?</span>
-        </button>
+        {/* Book Button */}
+        <div className="hidden sm:flex flex-col">
+          <button
+            className="w-full text-white  font-semibold rounded-lg px-4 py-3 flex flex-col justify-center text-center"
+            style={{ backgroundColor: "rgb(38,116,255)" }}
+          >
+            <span className="text-xs opacity-90">From 4,100 INR/Night</span>
+            <span className="text-lg font-bold">Book Now</span>
+          </button>
+        </div>
       </div>
     </div>
   );

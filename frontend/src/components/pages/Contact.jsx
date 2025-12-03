@@ -1,42 +1,42 @@
-import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, User, Send } from 'lucide-react';
-import MediaGalleryMini from '../../sections/MinimalGallery';
+import React, { useState } from "react";
+import { MapPin, Phone, Mail, Clock, User, Send } from "lucide-react";
+import MediaGalleryMini from "../../sections/MinimalGallery";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    checkIn: '',
-    checkOut: '',
-    guests: '',
-    roomType: '',
-    message: ''
+    name: "",
+    email: "",
+    phone: "",
+    checkIn: "",
+    checkOut: "",
+    guests: "",
+    roomType: "",
+    message: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    alert('Thank you for your inquiry! We will contact you soon.');
+    console.log("Form submitted:", formData);
+    alert("Thank you for your inquiry! We will contact you soon.");
     // Reset form
     setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      checkIn: '',
-      checkOut: '',
-      guests: '',
-      roomType: '',
-      message: ''
+      name: "",
+      email: "",
+      phone: "",
+      checkIn: "",
+      checkOut: "",
+      guests: "",
+      roomType: "",
+      message: "",
     });
   };
 
@@ -50,7 +50,8 @@ const ContactPage = () => {
               Contact Us
             </h1>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Get in touch with us to book your perfect getaway or ask any questions about our premium pool villas.
+              Get in touch with us to book your perfect getaway or ask any
+              questions about our premium pool villas.
             </p>
           </div>
         </div>
@@ -58,24 +59,32 @@ const ContactPage = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8">
             <div className="bg-white p-6 rounded-xl border border-gray-100">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Get In Touch</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                Get In Touch
+              </h2>
 
               <div className="space-y-6">
                 {/* Phone */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Phone className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-[#f5e1c3] rounded-lg flex items-center justify-center">
+                      <Phone className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600 mb-2">Call us directly for immediate assistance</p>
-                    <a href="tel:9384842525" className="text-blue-600 hover:text-blue-700 font-medium text-lg">
+                    <h3 className="text-lg font-medium text-gray-900 mb-1">
+                      Phone
+                    </h3>
+                    <p className="text-gray-600 mb-2">
+                      Call us directly for immediate assistance
+                    </p>
+                    <a
+                      href="tel:9384842525"
+                      className="text-[#c8b08a]  font-medium text-lg"
+                    >
                       9384842525
                     </a>
                   </div>
@@ -84,14 +93,21 @@ const ContactPage = () => {
                 {/* Email */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <Mail className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-[#f5e1c3] rounded-lg flex items-center justify-center">
+                      <Mail className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600 mb-2">Send us your detailed requirements</p>
-                    <a href="mailto:hfpoolresorto@gmail.com" className="text-blue-600 hover:text-blue-700 font-medium">
+                    <h3 className="text-lg font-medium text-gray-900 mb-1">
+                      Email
+                    </h3>
+                    <p className="text-gray-600 mb-2">
+                      Send us your detailed requirements
+                    </p>
+                    <a
+                      href="mailto:hfpoolresorto@gmail.com"
+                      className="text-[#c8b08a]  hover:text-blue-700 font-medium"
+                    >
                       hfpoolresorto@gmail.com
                     </a>
                   </div>
@@ -100,42 +116,56 @@ const ContactPage = () => {
                 {/* Address */}
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-6 h-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-[#f5e1c3] rounded-lg flex items-center justify-center">
+                      <MapPin className="w-6 h-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-medium text-gray-900 mb-1">Address</h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-1">
+                      Address
+                    </h3>
                     <p className="text-gray-600">
-                      No 32, Shyamala Gardens,<br />
-                      Kunal Garden Street,<br />
-                      Akkarai, Chennai, 600119,<br />
+                      No 32, Shyamala Gardens,
+                      <br />
+                      Kunal Garden Street,
+                      <br />
+                      Akkarai, Chennai, 600119,
+                      <br />
                       Tamil Nadu, India
                     </p>
-                    <a href="https://www.google.com/maps/place/HF+Pool+Resorto/@12.9012271,80.246719,890m/data=!3m1!1e3!4m9!3m8!1s0x3a525d221176b595:0xfebede8688a6c409!5m2!4m1!1i2!8m2!3d12.9012271!4d80.2492939!16s%2Fg%2F11xdrm1jlt?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="inline-block mt-3 text-blue-600 hover:text-blue-800 font-medium transition underline text-sm">
+                    <a
+                      href="https://www.google.com/maps/place/HF+Pool+Resorto/@12.9012271,80.246719,890m/data=!3m1!1e3!4m9!3m8!1s0x3a525d221176b595:0xfebede8688a6c409!5m2!4m1!1i2!8m2!3d12.9012271!4d80.2492939!16s%2Fg%2F11xdrm1jlt?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-3 text-[#c8b08a] font-medium transition underline text-sm"
+                    >
                       <span className="inline-flex items-center">
-                        <MapPin className="w-5 h-5 mr-1 -ml-1 text-blue-500" />
-                        View on Google Maps (12.901200942411188, 80.24923287520289)
+                        <MapPin className="w-5 h-5 mr-1 -ml-1 text-[#c8b08a]" />
+                        View on Google Maps (12.901200942411188,
+                        80.24923287520289)
                       </span>
                     </a>
                   </div>
                 </div>
-
               </div>
             </div>
-
           </div>
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
             <div className="bg-white p-8 rounded-xl border border-gray-100">
-              <h2 className="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-semibold text-gray-900 mb-6">
+                Send us a Message
+              </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Personal Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -150,7 +180,10 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Phone Number *
                     </label>
                     <input
@@ -167,7 +200,10 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Email Address *
                   </label>
                   <input
@@ -185,7 +221,10 @@ const ContactPage = () => {
                 {/* Booking Information */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   <div>
-                    <label htmlFor="checkIn" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="checkIn"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Check-in Date
                     </label>
                     <input
@@ -198,7 +237,10 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="checkOut" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="checkOut"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Check-out Date
                     </label>
                     <input
@@ -211,7 +253,10 @@ const ContactPage = () => {
                     />
                   </div>
                   <div>
-                    <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-2">
+                    <label
+                      htmlFor="guests"
+                      className="block text-sm font-medium text-gray-700 mb-2"
+                    >
                       Number of Guests
                     </label>
                     <select
@@ -235,7 +280,10 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="roomType" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="roomType"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Preferred Room Type
                   </label>
                   <select
@@ -246,14 +294,23 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
                   >
                     <option value="">Select room type</option>
-                    <option value="junior-suite">Junior Suite Pool Villa</option>
-                    <option value="presidential-suite">Presidential Family Suite Pool Villa</option>
-                    <option value="signature-villa">HF Signature Pool Villa</option>
+                    <option value="junior-suite">
+                      Junior Suite Pool Villa
+                    </option>
+                    <option value="presidential-suite">
+                      Presidential Family Suite Pool Villa
+                    </option>
+                    <option value="signature-villa">
+                      HF Signature Pool Villa
+                    </option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 mb-2"
+                  >
                     Message
                   </label>
                   <textarea
@@ -269,7 +326,7 @@ const ContactPage = () => {
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2 hover:shadow-lg"
+                  className="w-full bg-[#c8b08a] hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-medium transition-colors flex items-center justify-center space-x-2 hover:shadow-lg"
                 >
                   <Send className="w-5 h-5" />
                   <span>Send Message</span>
@@ -282,16 +339,28 @@ const ContactPage = () => {
         {/* Additional Information */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-blue-50 p-6 rounded-xl border border-blue-100 text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Response</h3>
-            <p className="text-gray-600 text-sm">We respond to all inquiries within 2-4 hours during business hours</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Quick Response
+            </h3>
+            <p className="text-gray-600 text-sm">
+              We respond to all inquiries within 2-4 hours during business hours
+            </p>
           </div>
           <div className="bg-green-50 p-6 rounded-xl border border-green-100 text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Best Rate Guarantee</h3>
-            <p className="text-gray-600 text-sm">Book directly with us for the best rates and exclusive offers</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Best Rate Guarantee
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Book directly with us for the best rates and exclusive offers
+            </p>
           </div>
           <div className="bg-purple-50 p-6 rounded-xl border border-purple-100 text-center">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Personalized Service</h3>
-            <p className="text-gray-600 text-sm">Our team ensures every detail of your stay is perfect</p>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Personalized Service
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Our team ensures every detail of your stay is perfect
+            </p>
           </div>
         </div>
         <MediaGalleryMini />

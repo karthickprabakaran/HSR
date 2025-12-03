@@ -88,9 +88,7 @@ const JuniorSuiteVilla = () => {
 
           {/* ROOM DESCRIPTION */}
           <div className="space-y-6">
-            <h1 className="text-4xl font-bold text-gray-900">
-              {room.title}
-            </h1>
+            <h1 className="text-4xl font-bold text-gray-900">{room.title}</h1>
             <p className="text-lg text-gray-600">{room.description}</p>
 
             {/* SPECS */}
@@ -101,11 +99,15 @@ const JuniorSuiteVilla = () => {
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
                 <Bath className="w-6 h-6 text-gray-500" />
-                <span className="font-medium text-gray-700">Luxury Bathroom</span>
+                <span className="font-medium text-gray-700">
+                  Luxury Bathroom
+                </span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
                 <Users className="w-6 h-6 text-gray-500" />
-                <span className="font-medium text-gray-700">Couples / Family</span>
+                <span className="font-medium text-gray-700">
+                  Couples / Family
+                </span>
               </div>
               <div className="flex items-center space-x-3 bg-gray-50 p-4 rounded-xl shadow-sm">
                 <Utensils className="w-6 h-6 text-gray-500" />
@@ -135,7 +137,7 @@ const JuniorSuiteVilla = () => {
           {/* LEFT SIDE (Check-In + Plans) */}
           <div className="space-y-6">
             {/* Check-in / Check-out */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Check-in / Check-out
               </h3>
@@ -154,8 +156,8 @@ const JuniorSuiteVilla = () => {
             </div>
 
             {/* CP Plan */}
-            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-lg font-bold text-blue-700 mb-3">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold text-black mb-3">
                 CP Plan (Room + Breakfast)
               </h3>
               <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
@@ -173,8 +175,8 @@ const JuniorSuiteVilla = () => {
             </div>
 
             {/* EP Plan */}
-            <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-lg font-bold text-blue-700 mb-3">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold text-black mb-3">
                 EP Plan (Room Only)
               </h3>
               <div className="bg-white rounded-xl p-4 shadow-sm border border-blue-100">
@@ -195,7 +197,7 @@ const JuniorSuiteVilla = () => {
           {/* RIGHT SIDE (Extra Guest + Cancellation) */}
           <div className="space-y-6">
             {/* Extra Guest */}
-            <div className="bg-indigo-50 rounded-2xl p-6 border border-indigo-100">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-indigo-100">
               <h3 className="text-lg font-bold text-gray-900 mb-4">
                 Extra Guest Policy
               </h3>
@@ -242,13 +244,13 @@ const JuniorSuiteVilla = () => {
 
         {/* SMALL BOOK NOW BUTTON */}
         <div className="mt-8 flex justify-center">
-          <button className="px-8 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 text-sm font-medium">
+          <button className="px-8 py-2 bg-[#c8b08a] text-white rounded-lg shadow hover:bg-blue-700 text-sm font-medium">
             Book Now
           </button>
         </div>
 
         {/* AMENITIES */}
-        <div className="mt-12 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-100">
+        <div className="mt-12 bg-orange-50 rounded-2xl p-8 border border-teal-100">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
             Premium Amenities & Features
           </h2>
@@ -270,3 +272,4 @@ const JuniorSuiteVilla = () => {
 };
 
 export default JuniorSuiteVilla;
+

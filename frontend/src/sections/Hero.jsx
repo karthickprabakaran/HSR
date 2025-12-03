@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import seating from "../assets/images/seating_1.jpg";
 import side from "../assets/images/sideangle_1.jpg";
+import { colors, buttons } from "../config/colours";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -13,11 +14,11 @@ const Hero = () => {
   const today = new Date();
   const tomorrow = new Date(today);
   tomorrow.setDate(tomorrow.getDate() + 1);
-  
+
   const formatDate = (date) => {
-    return `${date.getDate().toString().padStart(2, '0')}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getFullYear()}`;
+    return `${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1).toString().padStart(2, "0")}/${date.getFullYear()}`;
   };
-  
+
   const checkInDate = formatDate(today);
   const checkOutDate = formatDate(tomorrow);
 
@@ -113,7 +114,11 @@ const Hero = () => {
         onClick={togglePlayPause}
         className="absolute top-20 md:top-24 right-4 md:right-8 z-20 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
       >
-        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+        {isPlaying ? (
+          <Pause className="w-5 h-5" />
+        ) : (
+          <Play className="w-5 h-5" />
+        )}
       </button>
 
       {/* Slide Indicators */}
@@ -122,10 +127,10 @@ const Hero = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-3 h-3 rounded-full  transition-all duration-300 ${
               index === currentSlide
                 ? "bg-white shadow-lg"
-                : "bg-white/40 hover:bg-white/60"
+                : "bg-white /40 hover:bg-white/60"
             }`}
           ></button>
         ))}
@@ -145,8 +150,7 @@ const Hero = () => {
         {/* Mobile: ONLY Book Now */}
         <div className="sm:hidden col-span-1">
           <button
-            className="w-full text-white font-semibold rounded-lg px-4 py-3 flex flex-col items-center"
-            style={{ backgroundColor: "rgb(38,116,255)" }}
+            className={`w-full bg-[#d8b08a] text-white flex flex-col items-center`}
           >
             <span className="text-xs opacity-90">From 4,100 INR/Night</span>
             <span className="text-lg font-bold">Book Now</span>
@@ -163,9 +167,7 @@ const Hero = () => {
         {/* Hotel */}
         <div className="hidden sm:flex flex-col">
           <span className="text-gray-500 text-sm">Hotel</span>
-          <span className="font-semibold text-gray-800">
-            HF Pool Resorto  
-          </span>
+          <span className="font-semibold text-gray-800">HF Pool Resorto</span>
         </div>
 
         {/* Check In */}
@@ -183,8 +185,7 @@ const Hero = () => {
         {/* Book Button */}
         <div className="hidden sm:flex flex-col">
           <button
-            className="w-full text-white  font-semibold rounded-lg px-4 py-3 flex flex-col justify-center text-center"
-            style={{ backgroundColor: "rgb(38,116,255)" }}
+            className={`w-full ${colors.primary} ${buttons.medium} flex flex-col justify-center text-center`}
           >
             <span className="text-xs opacity-90">From 4,100 INR/Night</span>
             <span className="text-lg font-bold">Book Now</span>

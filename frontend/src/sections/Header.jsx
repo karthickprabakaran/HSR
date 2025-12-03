@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Facebook, Twitter, Instagram } from "lucide-react";
+import { colors, buttons } from "../config/colours.js";
+import logo from "../assets/Logo.png";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -50,7 +52,7 @@ const Header = () => {
 
   // Determine header classes based on page and scroll state
   const getHeaderClasses = () => {
-    return "fixed top-0 left-0 right-0 z-50 bg-black/100 backdrop-blur-md shadow-lg py-4 transition-all duration-300"
+    return "fixed bg-brand-primary top-0 left-0 right-0 z-50 bg-black/100 backdrop-blur-md shadow-lg py-4 transition-all duration-300 ";
     //"fixed top-0 left-0 right-0 z-50 bg-transparent  py-4 transition-all duration-300";
   };
 
@@ -59,18 +61,15 @@ const Header = () => {
       {/* Header */}
       <header className={getHeaderClasses()}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between ">
             {/* Logo - Top Left */}
             <Link to="/" className="flex items-center flex-shrink-0">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-white/10 border border-white/20 flex items-center justify-center mr-2 lg:mr-3">
-                <span className="text-white font-bold text-xl lg:text-xl">
-                  HF
-                </span>
-              </div>
-              <div className="text-white">
-                <p className="text-lg tracking-[0.2em] font-bold text-white uppercase">
-                  Pool Resorto
-                </p>
+              <div className="w-20 h-10 lg:w-22 lg:h-10   flex items-center justify-center mr-2 lg:mr-3">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="w-[100px] h-[100px] object-contain"
+                />
               </div>
             </Link>
 
@@ -86,7 +85,7 @@ const Header = () => {
                     onMouseLeave={() => setIsSuitesOpen(false)}
                   >
                     <button
-                      className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? "border-b-2 border-white pb-1" : ""}`}
+                      className={`cursor-pointer text-white hover:text-[#e0c98c] transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 flex items-center ${item.children.some((child) => isActive(child.path)) ? "border-b-2 border-white pb-1" : ""}`}
                       type="button"
                       aria-haspopup="menu"
                       aria-expanded={isSuitesOpen}
@@ -113,7 +112,7 @@ const Header = () => {
                         <Link
                           key={child.name}
                           to={child.path}
-                          className={`cursor-pointer block px-6 py-3 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? "font-bold text-blue-600 bg-gray-100" : ""}`}
+                          className={`cursor-pointer block px-6 py-3 text-gray-800 hover:text-[#7db6c0] hover:bg-gray-100 transition-colors duration-200 font-medium text-sm ${isActive(child.path) ? "font-bold text-[#7db6c0] bg-gray-100" : ""}`}
                           onClick={() => setIsSuitesOpen(false)}
                         >
                           {child.name}
@@ -125,7 +124,7 @@ const Header = () => {
                   <Link
                     key={item.name}
                     to={item.path}
-                    className={`cursor-pointer text-white hover:text-blue-400 transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? "border-b-2 border-white pb-1" : ""}`}
+                    className={`cursor-pointer text-white hover:text-[#e0c98c] transition-colors duration-300 font-medium text-sm tracking-wide px-4 py-2 ${isActive(item.path) ? "border-b-2 border-white pb-1" : ""}`}
                   >
                     {item.name}
                   </Link>
@@ -161,7 +160,7 @@ const Header = () => {
               {/* Book Button */}
               <Link
                 to="/contact"
-                className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md font-medium text-sm tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ml-4"
+                className={`${colors.primary} ${buttons.medium} transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ml-4`}
               >
                 Book A Room
               </Link>
@@ -223,7 +222,7 @@ const Header = () => {
                           isActive(child.path),
                         )}
                       >
-                        <summary className="text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block cursor-pointer flex justify-between items-center">
+                        <summary className="text-gray-800 hover:text-[#7db6c0] transition-colors duration-200 font-medium py-2 block cursor-pointer flex justify-between items-center">
                           Suites <span className="ml-2 text-xs">▼</span>
                         </summary>
                         <ul className="ml-4 mt-2 border-l pl-4">
@@ -231,7 +230,7 @@ const Header = () => {
                             <li key={child.name}>
                               <Link
                                 to={child.path}
-                                className={`block py-2 text-gray-700 hover:text-blue-600 font-medium text-sm ${isActive(child.path) ? "text-blue-600 font-bold" : ""}`}
+                                className={`block py-2 text-gray-700 hover:text-[#7db6c0] font-medium text-sm ${isActive(child.path) ? "text-[#7db6c0] font-bold" : ""}`}
                                 onClick={() => setIsMobileMenuOpen(false)}
                               >
                                 {child.name}
@@ -245,7 +244,7 @@ const Header = () => {
                     <li key={item.name}>
                       <Link
                         to={item.path}
-                        className={`text-gray-800 hover:text-blue-600 transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? "text-blue-600 border-l-4 border-blue-600 pl-4" : ""}`}
+                        className={`text-gray-800 hover:text-[#7db6c0] transition-colors duration-200 font-medium py-2 block ${isActive(item.path) ? "text-[#7db6c0] border-l-4 border-[#7db6c0] pl-4" : ""}`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.name}
@@ -259,19 +258,19 @@ const Header = () => {
               <div className="flex justify-center space-x-6 mt-8 pt-6 border-t">
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[#7db6c0] transition-colors duration-200"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[#7db6c0] transition-colors duration-200"
                 >
                   <Twitter className="w-5 h-5" />
                 </a>
                 <a
                   href="#"
-                  className="text-gray-600 hover:text-blue-600 transition-colors duration-200"
+                  className="text-gray-600 hover:text-[#7db6c0] transition-colors duration-200"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
@@ -281,7 +280,7 @@ const Header = () => {
               <div className="mt-6">
                 <Link
                   to="/contact"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md font-medium tracking-wide transition-all duration-300 text-center block"
+                  className={`w-full ${colors.primary} ${buttons.medium} transition-all duration-300 text-center block`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Book A Room

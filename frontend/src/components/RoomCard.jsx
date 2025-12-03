@@ -1,5 +1,5 @@
-import React from 'react'
-import { Star, Bed, Bath, Utensils,ShowerHead } from 'lucide-react'
+import React from "react";
+import { Star, Bed, Bath, Utensils, ShowerHead } from "lucide-react";
 
 const RoomCard = ({
   image,
@@ -9,7 +9,7 @@ const RoomCard = ({
   bathrooms,
   bathtub,
   LivingSpace,
-  price
+  price,
 }) => {
   return (
     <div className="bg-white rounded-xl border border-gray-100 overflow-hidden hover:border-gray-200 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col group">
@@ -23,7 +23,9 @@ const RoomCard = ({
         {/* Price Badge */}
         <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1.5 rounded-lg shadow-sm">
           <div className="text-right">
-            <div className="text-base font-bold text-gray-900">₹{price.toLocaleString()}</div>
+            <div className="text-base font-bold text-gray-900">
+              ₹{price.toLocaleString()}
+            </div>
             <div className="text-xs text-gray-500">/night</div>
           </div>
         </div>
@@ -50,18 +52,20 @@ const RoomCard = ({
         <div className="flex items-center justify-between text-gray-600 text-sm mb-4">
           <div className="flex items-center space-x-1">
             <Bed className="w-3.5 h-3.5 text-gray-400" />
-            <span>{bedrooms} King Bed{bedrooms > 1 ? 's' : ''}</span>
+            <span>
+              {bedrooms} King Bed{bedrooms > 1 ? "s" : ""}
+            </span>
           </div>
           <div className="flex items-center space-x-1">
             <ShowerHead className="w-3.5 h-3.5 text-gray-400" />
             <span>{bathrooms} Bath</span>
           </div>
-          { bathtub && 
-          <div className="flex items-center space-x-1">
-            <Bath className="w-3.5 h-3.5 text-gray-400" />
-           <span>Bathtub</span>
-          </div>
-    }
+          {bathtub && (
+            <div className="flex items-center space-x-1">
+              <Bath className="w-3.5 h-3.5 text-gray-400" />
+              <span>Bathtub</span>
+            </div>
+          )}
           <div className="flex items-center space-x-1">
             <Utensils className="w-3.5 h-3.5 text-gray-400" />
             <span>Living Space</span>
@@ -70,7 +74,7 @@ const RoomCard = ({
 
         {/* Book Now Button - Pushed to bottom */}
         <div className="mt-auto">
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 px-4 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25">
+          <button className="w-full  bg-[#d8b08a] text-white py-2.5 px-4 rounded-lg font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25">
             Book Now
           </button>
         </div>
@@ -85,7 +89,7 @@ const RoomCard = ({
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default RoomCard
+export default RoomCard;

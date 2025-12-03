@@ -150,6 +150,7 @@ const Hero = () => {
         {/* Mobile: ONLY Book Now */}
         <div className="sm:hidden col-span-1">
           <button
+            onClick={() => (window.location.href = "tel:9384842525")}
             className={`w-full bg-[#d8b08a] text-white flex flex-col items-center`}
           >
             <span className="text-xs opacity-90">From 4,100 INR/Night</span>
@@ -185,7 +186,7 @@ const Hero = () => {
         {/* Book Button */}
         <div className="hidden sm:flex flex-col">
           <button
-          onClick={() => window.location.href = 'tel:9384842525'}
+            onClick={() => (window.location.href = "tel:9384842525")}
             className={`w-full ${colors.primary} ${buttons.medium} flex flex-col justify-center text-center`}
           >
             <span className="text-xs opacity-90">From 4,100 INR/Night</span>

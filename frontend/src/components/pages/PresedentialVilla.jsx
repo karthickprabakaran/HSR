@@ -9,7 +9,7 @@ import {
   Users,
   WavesLadder,
 } from "lucide-react";
-import img from '../../assets/images/presedential/File2.jpg'
+import img from "../../assets/images/presedential/File2.jpg";
 
 const PresedentialVilla = () => {
   const room = {
@@ -140,12 +140,10 @@ const PresedentialVilla = () => {
 
         {/* ----------------------- PRICING 2-COLUMN ----------------------- */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-14">
-
           {/* ---------------- LEFT COLUMN ---------------- */}
           <div className="space-y-6">
-
             {/* Check-in / Check-out */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
               <h3 className="text-lg font-semibold mb-4 text-gray-900">
                 Check-in / Check-out Times
               </h3>
@@ -163,8 +161,8 @@ const PresedentialVilla = () => {
             </div>
 
             {/* CP PLAN */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-lg font-bold text-blue-700 mb-3">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold text-black mb-3">
                 CP Plan (Room + Breakfast)
               </h3>
 
@@ -183,8 +181,8 @@ const PresedentialVilla = () => {
             </div>
 
             {/* EP PLAN */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
-              <h3 className="text-lg font-bold text-blue-700 mb-3">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
+              <h3 className="text-lg font-bold text-black mb-3">
                 EP Plan (Room Only)
               </h3>
 
@@ -201,14 +199,12 @@ const PresedentialVilla = () => {
                 </div>
               </div>
             </div>
-
           </div>
 
           {/* ---------------- RIGHT COLUMN ---------------- */}
           <div className="space-y-6">
-
             {/* Extra Guest Policy */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 border border-blue-100">
+            <div className="bg-orange-50 rounded-2xl p-6 border border-blue-100">
               <h3 className="text-lg font-bold text-gray-900 mb-4">
                 Extra Guest Policy
               </h3>
@@ -255,19 +251,18 @@ const PresedentialVilla = () => {
                 <p className="text-sm text-red-600">100% Charge</p>
               </div>
             </div>
-
           </div>
         </div>
 
         {/* Book Now Button */}
         <div className="mt-8 text-center">
-          <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-lg">
+          <button className="px-8 py-3 bg-[#c8b08a] text-white rounded-lg font-medium text-lg">
             Book Now
           </button>
         </div>
 
         {/* Amenities */}
-        <div className="mt-12 bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-100">
+        <div className="mt-12 bg-orange-50 rounded-2xl p-8 border border-teal-100">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
             Premium Amenities & Features
           </h2>
@@ -289,3 +284,4 @@ const PresedentialVilla = () => {
 };
 
 export default PresedentialVilla;
+

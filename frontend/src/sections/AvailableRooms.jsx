@@ -1,121 +1,125 @@
-import { Link } from 'react-router-dom'
-import React, { useState, useEffect, useRef } from 'react'
-import RoomCard from '../components/RoomCard.jsx'
+import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import RoomCard from "../components/RoomCard.jsx";
+import { colors } from "../config/colours.js";
 
-import img1 from '../assets/images/PresIndex.jpg'
-import img2 from '../assets/images/JuIndex.jpg'
-import img3 from '../assets/images/straightangle_1.jpg'
+import img1 from "../assets/images/PresIndex.jpg";
+import img2 from "../assets/images/JuIndex.jpg";
+import img3 from "../assets/images/straightangle_1.jpg";
 
 const AvailableRooms = () => {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
       {
         threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      }
-    )
+        rootMargin: "0px 0px -50px 0px",
+      },
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
     return () => {
       if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+        observer.unobserve(sectionRef.current);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   // Client's actual room data (3 rooms only)
   const rooms = [
     {
       id: 1,
       image: img2,
-      title: 'Junior Suite Pool Villa',
+      title: "Junior Suite Pool Villa",
       rating: 9.0,
       bedrooms: 1,
       bathrooms: 1,
       LivingSpace: true,
       price: 15000,
-      link: '/juniorvilla'
+      link: "/juniorvilla",
     },
     {
       id: 2,
       image: img1,
-      title: 'Presidential Family Suite Pool Villa',
+      title: "Presidential Family Suite Pool Villa",
       rating: 9.5,
       bedrooms: 2,
       bathrooms: 2,
       LivingSpace: true,
       price: 25000,
-      link: '/presidential',
+      link: "/presidential",
       bathtub: true,
     },
     {
       id: 3,
       image: img3,
-      title: 'HF Signature Pool Villa',
+      title: "HF Signature Pool Villa",
       rating: 9.8,
       bedrooms: 2,
       bathrooms: 2,
-      LivingSpace: true,  
+      LivingSpace: true,
       price: 30000,
-     bathtub: true,
+      bathtub: true,
+    },
+  ];
 
-    }
-  ]
-
-  const [cardsToShow, setCardsToShow] = useState(3)
+  const [cardsToShow, setCardsToShow] = useState(3);
 
   // Responsive cards per view (max 3 since only 3 rooms)
   useEffect(() => {
     const handleResize = () => {
-      let cards = 3
-      if (window.innerWidth < 640) cards = 1
-      else if (window.innerWidth < 1024) cards = 2
-      else cards = 3
+      let cards = 3;
+      if (window.innerWidth < 640) cards = 1;
+      else if (window.innerWidth < 1024) cards = 2;
+      else cards = 3;
 
-      setCardsToShow(Math.min(cards, rooms.length))
-    }
+      setCardsToShow(Math.min(cards, rooms.length));
+    };
 
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [rooms.length])
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [rooms.length]);
 
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-24 lg:py-32 bg-gray-50"
+      className="py-16 md:py-24 lg:py-32 bg-white"
       id="rooms"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Section Header */}
-        <div className={`text-center mb-12 ${isVisible ? 'animate-fadeInUp' : 'opacity-0'}`}>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        <div
+          className={`text-center mb-12 ${isVisible ? "animate-fadeInUp" : "opacity-0"}`}
+        >
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
             Stay at our top unique properties
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-700 text-lg max-w-2xl mx-auto">
             From castles and villas to boats and igloos, we have it all
           </p>
         </div>
 
         {/* Cards */}
-        <div className={`${isVisible ? 'animate-slideInUp' : 'opacity-0'}`}>
-
+        <div className={`${isVisible ? "animate-slideInUp" : "opacity-0"}`}>
           {/* Mobile Slider */}
           <div className="sm:hidden flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 hide-scrollbar">
             {rooms.map((room) => (
-              <Link to={room.link} key={room.id} className="snap-center shrink-0 w-80">
+              <Link
+                to={room.link}
+                key={room.id}
+                className="snap-center shrink-0 w-80"
+              >
                 <RoomCard
                   image={room.image}
                   title={room.title}
@@ -147,7 +151,6 @@ const AvailableRooms = () => {
             ))}
           </div>
         </div>
-
       </div>
 
       {/* Animations & scrollbar style */}
@@ -182,12 +185,24 @@ const AvailableRooms = () => {
           animation: slideInUp 1s ease-out forwards;
         }
 
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        .delay-500 { animation-delay: 0.5s; }
-        .delay-600 { animation-delay: 0.6s; }
+        .delay-100 {
+          animation-delay: 0.1s;
+        }
+        .delay-200 {
+          animation-delay: 0.2s;
+        }
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+        .delay-400 {
+          animation-delay: 0.4s;
+        }
+        .delay-500 {
+          animation-delay: 0.5s;
+        }
+        .delay-600 {
+          animation-delay: 0.6s;
+        }
 
         /* Hide scrollbar for slider */
         .hide-scrollbar::-webkit-scrollbar {
@@ -199,7 +214,7 @@ const AvailableRooms = () => {
         }
       `}</style>
     </section>
-  )
-}
+  );
+};
 
-export default AvailableRooms
+export default AvailableRooms;

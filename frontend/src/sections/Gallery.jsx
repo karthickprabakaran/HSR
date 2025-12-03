@@ -4,6 +4,7 @@ import { Pagination, Autoplay, Grid } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/grid";
+import { colors } from "../config/colours.js";
 
 import img1 from "../assets/images/Pool_1.jpg";
 import img2 from "../assets/images/straightangle_1.jpg";
@@ -44,12 +45,12 @@ const mediaItems = [
 
 const MediaGallerySlider = () => {
   return (
-    <section className="py-24 px-6 bg-gray-50">
+    <section className="py-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
           HF's Gallery
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-700 max-w-2xl mx-auto">
           Explore our resort through images and videos for an immersive
           experience.
         </p>

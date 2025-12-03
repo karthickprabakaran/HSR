@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
-
+:root {
+  --color-primary: #c8b08a;
+  --color-secondary: #7db6c0;
+}
 body {
   background-color: black;
 }

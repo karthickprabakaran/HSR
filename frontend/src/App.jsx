@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./sections/Header.jsx";
 import Footer from "./sections/Footer.jsx";
+import WhatsAppRedirect from './components/WhatsAppRedirect.jsx';
 import Home from './components/pages/Home.jsx';
 import ContactPage from './components/pages/Contact.jsx';
 import JuniorPoolVilla from './components/pages/JuniorVilla.jsx';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/attractions" element={<AttractionsPage />} />
         </Routes>
       </main>
+      <WhatsAppRedirect />
       <Footer />
     </Router>
   );

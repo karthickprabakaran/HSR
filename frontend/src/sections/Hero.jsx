@@ -1,26 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Play, Pause } from "lucide-react";
-import { Link } from "react-router-dom";
 
 import seating from "../assets/images/seating_1.jpg";
 import side from "../assets/images/sideangle_1.jpg";
-import { colors, buttons } from "../config/colours";
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
-
-  // Dynamic dates
-  const today = new Date();
-  const tomorrow = new Date(today);
-  tomorrow.setDate(tomorrow.getDate() + 1);
-
-  const formatDate = (date) => {
-    return `${date.getDate().toString().padStart(2, "0")}/${(date.getMonth() + 1).toString().padStart(2, "0")}/${date.getFullYear()}`;
-  };
-
-  const checkInDate = formatDate(today);
-  const checkOutDate = formatDate(tomorrow);
 
   const slides = [
     { type: "video", src: "/videos/27.mp4", alt: "Resort Pool View" },
@@ -136,63 +122,14 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* Bottom Information Bar */}
-      <div
-        className="
-          absolute -bottom-[-6%] left-1/2 transform -translate-x-1/2
-          w-[95%] md:w-[85%] lg:w-[75%]
-          bg-white shadow-xl rounded-xl
-          z-30
-          grid grid-cols-1 sm:grid-cols-5 gap-4
-          p-5
-        "
-      >
-        {/* Mobile: ONLY Book Now */}
-        <div className="sm:hidden col-span-1">
-          <button
-            onClick={() => (window.location.href = "tel:9384842525")}
-            className={`w-full bg-[#d8b08a] text-white flex flex-col items-center`}
-          >
-            <span className="text-xs opacity-90">From 4,100 INR/Night</span>
-            <span className="text-lg font-bold">Book Now</span>
-          </button>
-        </div>
-
-        {/* Desktop Fields */}
-        {/* Location */}
-        <div className="hidden sm:flex flex-col h-[10%] ">
-          <span className="text-gray-500 text-sm">Location</span>
-          <span className="font-semibold text-gray-800">Tamil Nadu</span>
-        </div>
-
-        {/* Hotel */}
-        <div className="hidden sm:flex flex-col">
-          <span className="text-gray-500 text-sm">Hotel</span>
-          <span className="font-semibold text-gray-800">HF Pool Resorto</span>
-        </div>
-
-        {/* Check In */}
-        <div className="hidden sm:flex flex-col">
-          <span className="text-gray-500 text-sm">Check In</span>
-          <span className="font-semibold text-gray-800">{checkInDate}</span>
-        </div>
-
-        {/* Check Out */}
-        <div className="hidden sm:flex flex-col">
-          <span className="text-gray-500 text-sm">Check Out</span>
-          <span className="font-semibold text-gray-800">{checkOutDate}</span>
-        </div>
-
-        {/* Book Button */}
-        <div className="hidden sm:flex flex-col">
-          <button
-            onClick={() => (window.location.href = "tel:9384842525")}
-            className={`w-full ${colors.primary} ${buttons.medium} flex flex-col justify-center text-center`}
-          >
-            <span className="text-xs opacity-90">From 4,100 INR/Night</span>
-            <span className="text-lg font-bold">Book Now</span>
-          </button>
-        </div>
+      {/* Centered Resort Text */}
+      <div className="absolute bottom-10 left-1/2 z-30 w-[90%] max-w-3xl -translate-x-1/2 transform rounded-xl bg-black/40 px-4 py-4 text-center backdrop-blur-sm md:bottom-14">
+        <h2 className="text-white text-2xl md:text-3xl font-bold">HF Pool Resorto</h2>
+        <p className="mt-2 text-white/90 text-sm md:text-base leading-relaxed">
+          HF Pool Resort empowers guests to transform raw relaxation into clear,
+          compelling experiences — making luxury easier to share, understand, and
+          enjoy.
+        </p>
       </div>
     </div>
   );

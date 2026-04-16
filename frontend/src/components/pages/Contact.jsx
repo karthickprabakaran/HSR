@@ -68,7 +68,7 @@ const ContactPage = () => {
 
               <div className="space-y-6">
                 {/* Phone */}
-                <div className="flex items-start space-x-4">
+                {/* <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-[#f5e1c3] rounded-lg flex items-center justify-center">
                       <Phone className="w-6 h-6 text-white" />
@@ -88,7 +88,7 @@ const ContactPage = () => {
                       9384842525
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Email */}
                 <div className="flex items-start space-x-4">
@@ -133,7 +133,7 @@ const ContactPage = () => {
                       <br />
                       Tamil Nadu, India
                     </p>
-                    <a
+                    {/* <a
                       href="https://www.google.com/maps/place/HF+Pool+Resorto/@12.9012271,80.246719,890m/data=!3m1!1e3!4m9!3m8!1s0x3a525d221176b595:0xfebede8688a6c409!5m2!4m1!1i2!8m2!3d12.9012271!4d80.2492939!16s%2Fg%2F11xdrm1jlt?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -144,7 +144,7 @@ const ContactPage = () => {
                         View on Google Maps (12.901200942411188,
                         80.24923287520289)
                       </span>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

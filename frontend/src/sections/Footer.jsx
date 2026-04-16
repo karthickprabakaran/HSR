@@ -38,33 +38,32 @@ const Footer = () => {
                 href="#"
                 className="text-gray-500 hover:text-[#7db6c0] transition"
               >
-                <Twitter className="w-5 h-5" />
+                <Twitter size={20} strokeWidth={2} />
               </a>
               <a
                 href="#"
                 className="text-gray-500 hover:text-[#7db6c0] transition"
               >
-                <Instagram className="w-5 h-5" />
+                <Instagram size={20} strokeWidth={2} />
               </a>
               <a
                 href="#"
                 className="text-gray-500 hover:text-[#7db6c0] transition"
               >
-                <Linkedin className="w-5 h-5" />
+                <Linkedin size={20} strokeWidth={2} />
               </a>
               <a
                 href="#"
                 className="text-gray-500 hover:text-[#7db6c0] transition"
               >
-                <Facebook className="w-5 h-5" />
+                <Facebook size={20} strokeWidth={2} />
               </a>
             </div>
           </div>
 
           {/* Contact Info */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="flex items-start">
-              <MapPin className="w-5 h-5 text-gray-500 mr-3 mt-0.5" />
+            <div className="flex items-center">
               <div>
                 <h5 className="text-gray-800 font-medium text-sm mb-1">
                   Address
@@ -76,8 +75,12 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
-              <Phone className="w-5 h-5 text-gray-500 mr-3 mt-0.5" />
+            <div className="flex items-center">
+              <Phone
+                size={20}
+                strokeWidth={2}
+                className="text-gray-500 mr-3 flex-shrink-0"
+              />
               <div>
                 <h5 className="text-gray-800 font-medium text-sm mb-1">
                   Phone
@@ -88,8 +91,12 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <div className="flex items-start">
-              <Mail className="w-5 h-5 text-gray-500 mr-3 mt-0.5" />
+            <div className="flex items-center">
+              <Mail
+                size={20}
+                strokeWidth={2}
+                className="text-gray-500 mr-3 flex-shrink-0"
+              />
               <div>
                 <h5 className="text-gray-800 font-medium text-sm mb-1">
                   Email
